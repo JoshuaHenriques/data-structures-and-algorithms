@@ -29,7 +29,7 @@ def unique(str: str) -> bool:
 # Convert str to a set which will remove dups. Compare str lengths
 def unique1(str: str) -> bool:
     str = str.lower()
-    unique_str = set(str)
+    unique_str = set(str) # O(N)
     if len(unique_str) == len(str):
         return True
     else:
@@ -43,7 +43,7 @@ def unique2(str: str) -> bool:
 	for char in str:
 		if char in set_str:
 			return False
-		set_str.add(char)
+		set_str.add(char) # O(N)
 	return True
 
 
