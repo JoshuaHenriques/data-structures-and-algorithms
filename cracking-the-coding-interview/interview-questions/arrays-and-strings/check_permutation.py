@@ -5,12 +5,6 @@ other.
 Examples:
 str0 = "bbca"
 str1 = "abbc"
-
-Hints 
-#1      
-#84     
-#122   
-#131
 '''
 
 # If both strings aren't the same length then return false, update strings to

@@ -6,12 +6,6 @@ What if you cannot use additional data structures?
 Examples: 
 "abcdefgg"
 "abcdefg"
-
-Hints
-#44 	Try a hash table
-#117 	Could a bit vector be useful?
-#132    Can you solve it in O(N log N) time? What might a solution like that
-		look like?
 '''
 
 # Sort str, if not unique there dups will be continguously placed, compare the
