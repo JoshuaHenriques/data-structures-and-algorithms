@@ -9,6 +9,8 @@ str1 = "abbc"
 
 # If both strings aren't the same length then return false, update strings to
 # lowercase, sort strings and compare them.
+# Time Complexity: O(N log N)
+# Space Complexity: O(1)
 def permutation(str0: str, str1: str) -> bool:
 	if len(str0) != len(str1): 
 		return False
@@ -22,6 +24,8 @@ def permutation(str0: str, str1: str) -> bool:
 
 # Record frequency of characters in str0 with dictionary, then run through str1
 # removing str[char] from dictionary, if dictionary is 0 then its a permutation
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def permutation1(str0: str, str1: str) -> bool:
 	if len(str0) != len(str1): 
 		return False

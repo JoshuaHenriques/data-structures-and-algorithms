@@ -10,6 +10,8 @@ Examples:
 
 # Sort str, if not unique there dups will be continguously placed, compare the
 # prev to curr
+# Time Complexity: O(N log N)
+# Space Complexity: O(N)
 def unique(str: str) -> bool:
 	str = str.lower() # O(N)
 	prev = ""
@@ -21,6 +23,8 @@ def unique(str: str) -> bool:
 	return True
 
 # Convert str to a set which will remove dups. Compare str lengths
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def unique1(str: str) -> bool:
     str = str.lower() # O(N)
     unique_str = set(str) # O(N)
@@ -31,6 +35,8 @@ def unique1(str: str) -> bool:
 
 # Create a set and loop through str adding char to set and if it comes
 # accross a dup return false
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def unique2(str: str) -> bool:
 	str = str.lower() # O(N)
 	set_str = set() # O(N)
