@@ -7,7 +7,6 @@ Examples:
 "abcdefgg"
 "abcdefg"
 '''
-
 # Sort str, if not unique there dups will be continguously placed, compare the
 # prev to curr
 # Time Complexity: O(N log N)
