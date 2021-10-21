@@ -12,7 +12,7 @@ str1 = "abbc"
 def permutation(str0: str, str1: str) -> bool:
 	if len(str0) != len(str1): 
 		return False
-	str0, str1 = str0.lower(), str1.lower()
+	str0, str1 = str0.lower(), str1.lower() # O(N)
 	str0, str1 = sorted(str0), sorted(str1) # O(N log N)
 	return str0 == str1
 	# if str0.__eq__(str1): 
@@ -26,9 +26,9 @@ def permutation1(str0: str, str1: str) -> bool:
 	if len(str0) != len(str1): 
 		return False
 	count0 = {}
-	for char in str0:
+	for char in str0: # O(N)
 		count0[char] = count0.get(char, 0) + 1
-	for char in str1:
+	for char in str1: # O(N)
 		if char in count0:
 			count0[char] -= 1
 			if count0[char] == 0:

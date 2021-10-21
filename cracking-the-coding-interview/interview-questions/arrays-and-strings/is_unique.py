@@ -11,33 +11,33 @@ Examples:
 # Sort str, if not unique there dups will be continguously placed, compare the
 # prev to curr
 def unique(str: str) -> bool:
-	str = str.lower()
-	prev = ""  # O(1)
+	str = str.lower() # O(N)
+	prev = ""
 	arr = sorted(str)  # O(N log N)
-	for char in arr:
+	for char in arr: # O(N)
 		if char == prev:
-  			return False  # O(1)
-		prev = char  # O(N)
+  			return False
+		prev = char
 	return True
 
 # Convert str to a set which will remove dups. Compare str lengths
 def unique1(str: str) -> bool:
-    str = str.lower()
+    str = str.lower() # O(N)
     unique_str = set(str) # O(N)
     if len(unique_str) == len(str):
         return True
     else:
         return False
 
-# Create a set and loop through string adding char to set and if it comes
+# Create a set and loop through str adding char to set and if it comes
 # accross a dup return false
 def unique2(str: str) -> bool:
-	str = str.lower()
-	set_str = set()
-	for char in str:
+	str = str.lower() # O(N)
+	set_str = set() # O(N)
+	for char in str: # O(N)
 		if char in set_str:
 			return False
-		set_str.add(char) # O(N)
+		set_str.add(char)
 	return True
 
 
