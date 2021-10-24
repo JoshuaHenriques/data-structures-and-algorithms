@@ -18,16 +18,18 @@ Example:
 
 from typing import List
 
+# Time Complexity: O(N^2)
+# Space Complexity: O(1)
 def rotate_matrix(matrix: List[List[int]]) -> List[List[int]]:
 	# Transpose the Matrix
 	for i in range(len(matrix) - 1):
-		for j in range(i + 1, len(matrix)):
+		for j in range(i + 1, len(matrix)): # O(N^2)
 			# Switch the row and column indices
 			matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
 	# Reverse every row
 	for k in range(len(matrix)):
-		for l in range(len(matrix[k]) // 2):
+		for l in range(len(matrix[k]) // 2): # O(N log N)
 			# opposite is the opposing index to i
 			opposite = len(matrix[k]) - 1 - l
 			matrix[k][l], matrix[k][opposite] = matrix[k][opposite], matrix[k][l]

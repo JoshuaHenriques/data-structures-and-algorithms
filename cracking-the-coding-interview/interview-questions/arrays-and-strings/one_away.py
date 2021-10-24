@@ -10,7 +10,8 @@ pales,	pale	->	true
 pale,	bale	->	true
 pale,	bake	->	false
 '''
-
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def one_away(str0: str, str1: str) -> bool:
 	# Remove character
 	if len(str0) - len(str1) == 1:
@@ -22,7 +23,7 @@ def one_away(str0: str, str1: str) -> bool:
 	elif len(str0) - len(str1) == 0:
 		dict = {}
 		flag = False
-		for i, char in enumerate(str0):
+		for i, char in enumerate(str0): # O(N)
 			if str0[i] != str1[i]:
 				if flag == True:
 					return False

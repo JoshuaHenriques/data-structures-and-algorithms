@@ -18,10 +18,12 @@ Output: race car
 # If odd len(str), two of each letter and one character with odd frequency and
 # that character will appear in the middle of the string
 # Remove all spaces
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def check_perm_of_pali(str: str) -> bool:
 	freq = {}
 	
-	for char in str:
+	for char in str: # O(N)
 		if char == " ":
 			continue
 		freq[char] = freq.get(char, 0) + 1
