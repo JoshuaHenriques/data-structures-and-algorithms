@@ -1,4 +1,3 @@
-from typing import List
 '''
 #3 Write a method to replace all spaces in a string with '%20'. You many assume
 that the string has sufficent space at the end to hold the additional
@@ -10,6 +9,8 @@ Examples:
 Input:		"Mr John Smith		", 13
 Output:		"Mr%20John%20Smith"
 '''
+
+from typing import List
 
 # Copy str up until the "true_end" length into new String, then replace every space
 # to "%20" 
