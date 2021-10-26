@@ -22,7 +22,7 @@ from typing import List
 # Space Complexity: O(1)
 def rotate_matrix(matrix: List[List[int]]) -> List[List[int]]:
 	# Transpose the Matrix
-	for i in range(len(matrix) - 1):
+	for i in range(len(matrix)):
 		for j in range(i + 1, len(matrix)): # O(N^2)
 			# Switch the row and column indices
 			matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
