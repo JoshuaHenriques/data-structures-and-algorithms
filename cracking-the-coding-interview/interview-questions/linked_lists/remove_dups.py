@@ -9,6 +9,7 @@ Examples:
 '''
 
 from collections import deque
+from singly_linked_list import LinkedList
 
 # Time Complexity: O(N)
 # Space Complexity: O(N)
@@ -21,7 +22,37 @@ def remove_dups0(ll: deque) -> deque:
         new.append(node)
     return new
 
-# Without using a buffer
+# Time Complexity: O(N)
+# Space Complexity: O(N)
+def remove_dups1(head: LinkedList):
+    curr = head.head
+    prev = head.head
+    sett = set()
+    sett.add(curr.data)
+    while curr.next:
+        prev = curr
+        curr = curr.next
+        if curr.data not in sett:
+            sett.add(curr.data)
+        else:
+            prev.next = curr.next
+
+if __name__ == "__main__":
+    ll = deque([1, 4, 3, 5, 3])
+    print(ll)
+    print(remove_dups0(ll))
+
+    link = LinkedList()
+    link.insert(1)
+    link.insert(4)
+    link.insert(3)
+    link.insert(5)
+    link.insert(3)
+    print(link.to_string())
+    remove_dups1(link)
+    print(link.to_string())
+
+# Without using a buffer keeping constant space
 # Time Complexity: O(N^2)
 # Space Complexity: O(1)
 # def remove_dups1(ll: deque) -> deque:
@@ -33,22 +64,3 @@ def remove_dups0(ll: deque) -> deque:
 #     print(remove)
 #     for dup in remove:
 #         ll.remove(dup)
-
-# def remove_dups2(head):
-# 	if head is None:
-# 		return head 
-# 	settes = set()
-# 	settes.add(head.val)
-# 	curr = head
-# 	while curr and curr.next:
-# 		if curr.next.val in settes:
-# 			curr.next = curr.next.next
-# 		else:
-# 			settes.add(curr.next.val)
-# 			curr = curr.next
-# 	return head
-
-if __name__ == "__main__":
-	ll = deque([1, 4, 3, 5, 3])
-	print(ll)
-	print(remove_dups0(ll))

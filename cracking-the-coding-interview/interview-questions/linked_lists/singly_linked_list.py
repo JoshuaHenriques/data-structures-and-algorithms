@@ -60,7 +60,6 @@ class LinkedList:
 		while curr:
 			print(curr.data, end=' -> ')
 			curr = curr.next
-		print('None')
 
 if __name__ == "__main__":
 	linked_list = LinkedList()
