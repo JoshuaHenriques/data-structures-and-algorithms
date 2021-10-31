@@ -6,17 +6,12 @@ list.
 Examples:
 1 -> 4 -> 7 -> 5 -> 3 -> None, 2
 5 -> 3 -> None
-
-Hints:
-8, 25, 41, 67, 126
 '''
 
 from singly_linked_list import LinkedList
 
-# Time Complexity: O()
-# Space Complexity: O()
-
-
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 def kth_to_last(list: LinkedList, kth: int) -> LinkedList:
 	if not list or kth == 0:
 		return LinkedList()
