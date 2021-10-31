@@ -53,7 +53,7 @@ class LinkedList:
 
 
 	def get_size(self):
-		print(self.size)
+		return self.size	
 
 	def to_string(self):
 		curr = self.head
@@ -70,7 +70,7 @@ if __name__ == "__main__":
 	linked_list.insert(8)
 	linked_list.insert(19)
 	linked_list.to_string()
-	linked_list.get_size()
+	print(linked_list.get_size())
 	linked_list.delete(6)
 	linked_list.to_string()
 	print(linked_list.search(8))
