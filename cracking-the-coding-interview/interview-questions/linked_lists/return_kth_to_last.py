@@ -36,4 +36,4 @@ if __name__ == "__main__":
     link.insert(5)
     link.insert(3)
 
-    print(kth_to_last(link, 0).to_string())
+    print(kth_to_last(link, 3).to_string())
