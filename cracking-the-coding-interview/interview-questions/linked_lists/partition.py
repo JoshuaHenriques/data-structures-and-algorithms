@@ -14,6 +14,8 @@ Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 '''
 from singly_linked_list import LinkedList
 
+# Time Complexity O(N)
+# Space Complexity O(N)
 def partition(list: LinkedList, target: int) -> LinkedList:
     lessThan = LinkedList()
     greaterThan = LinkedList()
