@@ -5,14 +5,14 @@ list.
 
 Examples:
 1 -> 4 -> 7 -> 5 -> 3 -> None, 2
-5 -> 3 -> None
+5
 '''
 
 from singly_linked_list import LinkedList
 
 # Time Complexity: O(N)
 # Space Complexity: O(N)
-def kth_to_last(list: LinkedList, kth: int) -> LinkedList:
+def kth_to_last(list: LinkedList, kth: int):
 	if not list or kth == 0:
 		return LinkedList()
 	cnt = 0
@@ -20,12 +20,11 @@ def kth_to_last(list: LinkedList, kth: int) -> LinkedList:
 	curr = list.head
 	new = LinkedList()
 	while curr.next:
-		if cnt >= kth:
-			new.insert(curr.data)
+		if cnt == kth:
+			return curr.data
 		cnt += 1
 		curr = curr.next
-	new.insert(curr.data)
-	return new
+	return -1
 
 
 if __name__ == "__main__":
@@ -36,4 +35,4 @@ if __name__ == "__main__":
     link.insert(5)
     link.insert(3)
 
-    print(kth_to_last(link, 3).to_string())
+    print(kth_to_last(link, 5))
