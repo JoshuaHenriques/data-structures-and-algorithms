@@ -33,7 +33,7 @@ class LinkedList:
 			prev = curr
 			curr = curr.next
 
-	def search(self, data):
+	def search(self, data) -> int:
 		curr = self.head
 		cnt = 0
 		while curr.next and curr.data != data:
@@ -52,7 +52,7 @@ class LinkedList:
 		return None
 
 
-	def get_size(self):
+	def get_size(self) -> int:
 		return self.size	
 
 	def to_string(self):
@@ -61,6 +61,17 @@ class LinkedList:
 			print(curr.data, end=' -> ')
 			curr = curr.next
 
+	def reverse(self):
+		prev = None
+		curr = self.head
+		while curr:
+			temp = curr.next
+			curr.next = prev
+			prev = curr
+			curr = temp
+		return prev
+		
+
 if __name__ == "__main__":
 	linked_list = LinkedList()
 	linked_list.insert(5)
@@ -68,11 +79,23 @@ if __name__ == "__main__":
 	linked_list.insert(4)
 	linked_list.insert(7)
 	linked_list.insert(8)
-	linked_list.insert(19)
-	linked_list.to_string()
+	linked_list.insert(9)
+	print(linked_list.to_string())
 	print(linked_list.get_size())
 	linked_list.delete(6)
 	linked_list.to_string()
 	print(linked_list.search(8))
 	print(linked_list.get(3))
-	print(linked_list.search(19))
+	print(linked_list.search(9))
+	link = LinkedList()
+	link.insert('r')
+	link.insert('l')
+	link.insert('a')
+	link.insert('d')
+	link.insert('c')
+	link.insert('d')
+	link.insert('o')
+	curr = link.reverse()
+	while curr:
+		print(curr.data, end=' -> ')
+		curr = curr.next

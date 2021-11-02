@@ -8,11 +8,11 @@ Examples:
 5
 '''
 
-from singly_linked_list import LinkedList
+from singly_linked_list import LinkedList, Node
 
 # Time Complexity: O(N)
 # Space Complexity: O(N)
-def kth_to_last(list: LinkedList, kth: int):
+def kth_to_last(list: LinkedList, kth: int) -> Node:
 	if not list or kth == 0:
 		return LinkedList()
 	cnt = 0
@@ -21,7 +21,7 @@ def kth_to_last(list: LinkedList, kth: int):
 	new = LinkedList()
 	while curr.next:
 		if cnt == kth:
-			return curr.data
+			return curr
 		cnt += 1
 		curr = curr.next
 	return -1
@@ -35,4 +35,4 @@ if __name__ == "__main__":
     link.insert(5)
     link.insert(3)
 
-    print(kth_to_last(link, 5))
+    print(kth_to_last(link, 3).data)

@@ -45,7 +45,6 @@ def sum_lists(list0: LinkedList(), list1: LinkedList()) -> LinkedList():
     for i in range(len(sum_list)):
         sum_link.insert(sum_list[end - i])
     return sum_link, sum
-                
 
 if __name__ == "__main__":
     link0 = LinkedList()
