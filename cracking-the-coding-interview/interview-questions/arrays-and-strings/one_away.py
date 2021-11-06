@@ -16,6 +16,7 @@ def one_away(str0: str, str1: str) -> bool:
 	# Remove character
 	if len(str0) - len(str1) == 1:
 		return True
+	
 	# Insert character
 	elif len(str0) - len(str1) == -1:
 		return True
