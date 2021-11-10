@@ -14,6 +14,8 @@ Output: C
 
 from singly_linked_list import LinkedList
 
+# Time Complexity O(N)
+# Space Complexity O(N)
 def loop_detection(list: LinkedList):
 	dict = set()
 	curr = list.head

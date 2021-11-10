@@ -18,6 +18,8 @@ Output:
 from singly_linked_list import LinkedList
 from return_kth_to_last import kth_to_last
 
+# Time Complexity O(N)
+# Space Complexity O()
 def intersection(list0: LinkedList, list1: LinkedList):
 	list0_len = list0.get_size()
 	list1_len = list1.get_size()
