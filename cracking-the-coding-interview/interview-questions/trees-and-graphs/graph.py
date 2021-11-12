@@ -3,9 +3,14 @@ class Graph:
     # Constructor
     def __init__(self, edges, n):
 
+        # List of vertices 
+        self.vertices = []
         # A list of lists to represent an adjacency list
         self.adjList_directed = [[] for _ in range(n)]
         self.adjList_undirected = [[] for _ in range(n)]
+
+        for v in range(n):
+            self.vertices.append(n)
 
         # add edges to the directed graph
         for (src, dest) in edges:
