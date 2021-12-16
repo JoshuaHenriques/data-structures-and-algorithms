@@ -129,6 +129,17 @@ Binary Search Tree
 Tree
 Binary Search Tree
 
+450. Delete Node in a BST
+Tree Binary Search Tree
+
+108. Convert Sorted Array to Binary Search Tree
+Tree
+Binary Search Tree
+
+1382. Balance a Binary Search Tree
+Tree
+Binary Search Tree
+
 98. Validate Binary Search Tree
 Tree
 Depth-First Search
