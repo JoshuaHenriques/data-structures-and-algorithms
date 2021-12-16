@@ -1,0 +1,276 @@
+Algorithm
+
+217. Contains Duplicate
+Array
+Hash Table
+Sorting
+
+53. Maximum Subarray
+Array
+Divide and Conquer
+
+1. Two Sum
+Array
+Hash Table
+
+88. Merge Sorted Array
+Array
+Two Pointers
+Sorting
+
+350. Intersection of Two Arrays II
+Array
+Hash Table
+Two Pointers
+
+121. Best Time to Buy and Sell Stock
+Array
+Dynamic Programming
+
+566. Reshape the Matrix
+Array
+Matrix
+Simulation
+
+118. Pascal's Triangle
+Array
+Dynamic Programming
+
+36. Valid Sudoku
+Array
+Hash Table
+Matrix
+
+74. Search a 2D Matrix
+Array
+Binary Search
+Matrix
+
+387. First Unique Character in a String
+Hash Table
+String
+Queue
+
+383. Ransom Note
+Hash Table
+String
+Counting
+
+242. Valid Anagram
+Hash Table
+String
+Sorting
+
+141. Linked List Cycle
+Hash Table
+Linked List
+
+21. Merge Two Sorted Lists
+Linked List
+Recursion
+
+203. Remove Linked List Elements
+Linked List
+Recursion
+
+206. Reverse Linked List
+Linked List
+Recursion
+
+83. Remove Duplicates from Sorted List
+Linked List
+
+20. Valid Parentheses
+String
+Stack
+
+232. Implement Queue using Stacks
+Stack
+Design
+Queue
+
+144. Binary Tree Preorder Traversal
+Stack
+Tree
+
+94. Binary Tree Inorder Traversal
+Stack
+Tree
+
+145. Binary Tree Postorder Traversal
+Stack
+Tree
+
+102. Binary Tree Level Order Traversal
+Tree
+Breadth-First Search
+
+104. Maximum Depth of Binary Tree
+Tree
+Depth-First Search
+
+101. Symmetric Tree
+Tree
+Depth-First Search
+
+226. Invert Binary Tree
+Tree
+Depth-First Search
+
+112. Path Sum
+Tree
+Depth-First Search
+
+700. Search in a Binary Search Tree
+Tree
+Binary Search Tree
+
+701. Insert into a Binary Search Tree
+Tree
+Binary Search Tree
+
+98. Validate Binary Search Tree
+Tree
+Depth-First Search
+Binary Search Tree
+
+653. Two Sum IV - Input is a BST
+Hash Table
+Two Pointers
+Tree
+Depth-First Search
+Breadth-First Search
+Binary Search Tree
+
+235. Lowest Common Ancestor of a Binary Search Tree
+Tree
+Depth-First Search
+Binary Search Tree
+
+Algorithms
+
+704. Binary Search
+Array
+Binary Search
+
+278. First Bad Version
+Binary Search
+Interactive
+
+35. Search Insert Position
+Array
+Binary Search
+
+977. Squares of a Sorted Array
+Array
+Two Pointers
+Sorting
+
+189. Rotate Array
+Array
+Math
+Two Pointers
+
+283. Move Zeroes
+Array
+Two Pointers
+
+167. Two Sum II - Input Array Is Sorted
+Array
+Two Pointers
+
+344. Reverse String
+Two Pointers
+String
+
+557. Reverse Words in a String III
+Two Pointers
+String
+
+876. Middle of the Linked List
+Linked List
+Two Pointers
+
+19. Remove Nth Node From End of List
+Linked List
+Two Pointers
+
+3. Longest Substring Without Repeating Characters
+Hash Table
+String
+
+567. Permutation in String
+Hash Table
+Two Pointers
+
+733. Flood Fill
+Array
+Depth-First Search
+Breadth-First Search
+
+695. Max Area of Island
+Array
+Depth-First Search
+Breadth-First Search
+
+617. Merge Two Binary Trees
+Tree
+Depth-First Search
+
+116. Populating Next Right Pointers in Each Node
+Tree
+Depth-First Search
+
+542. 01 Matrix
+Array
+Dynamic Programming
+
+994. Rotting Oranges
+Array
+Breadth-First Search
+
+21. Merge Two Sorted Lists
+Linked List
+Recursion
+
+206. Reverse Linked List
+Linked List
+Recursion
+
+77. Combinations
+Array
+Backtracking
+
+46. Permutations
+Array
+Backtracking
+
+784. Letter Case Permutation
+String
+Backtracking
+
+70. Climbing Stairs
+Math
+Dynamic Programming
+
+198. House Robber
+Array
+Dynamic Programming
+
+120. Triangle
+Array
+Dynamic Programming
+
+231. Power of Two
+Math
+Bit Manipulation
+
+191. Number of 1 Bits
+Bit Manipulation
+
+190. Reverse Bits
+Divide and Conquer
+
+136. Single Number
+Array
+Bit Manipulation
