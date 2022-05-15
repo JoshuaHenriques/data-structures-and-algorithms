@@ -8,7 +8,7 @@ explaination
 
 `code`
 
-### Optimized Solution
+## Optimized Solution
 
 explaination
 
