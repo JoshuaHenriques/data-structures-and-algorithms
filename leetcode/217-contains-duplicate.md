@@ -1,13 +1,15 @@
 # Contains Duplicate
 
-> Question goes here.
+Question goes here.
 
 ## Naive Solution
 
-> explaination
+explaination
+
 `code`
 
-## Optimized Solution
+### Optimized Solution
 
-> explaination
+explaination
+
 `code`
