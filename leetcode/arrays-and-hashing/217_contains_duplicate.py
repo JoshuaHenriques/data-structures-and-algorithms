@@ -2,7 +2,6 @@ from ast import List
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        # hashmap to keep a counter on the nums in the array
         hashmap = {}
         for num in nums:
             if num in hashmap:
@@ -10,3 +9,14 @@ class Solution:
             hashmap[num] = True
         
         return False
+    
+    def containsDuplicate2(self, nums: List[int]) -> bool:
+        nums.sort()
+
+        j = 1
+        for i in range(len(nums)):
+            if j == len(nums):
+                return False
+            elif nums[i] == nums[j]:
+                return True
+            j += 1

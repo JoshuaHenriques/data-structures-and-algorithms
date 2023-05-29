@@ -1,0 +1,49 @@
+# Valid Anagram
+
+*Example 1:*
+
+```
+
+```
+
+*Example 2:*
+
+```
+
+```
+
+*Constraints:*
+
+```
+
+```
+
+## Naive Solution
+
+### Approach
+<!-- Describe your approach to solving the problem. -->
+
+### Complexity
+$$Time: O()$$
+
+$$Space: O()$$
+
+### Code
+```
+# code
+```
+
+## Optimized Solution
+
+### Approach
+<!-- Describe your approach to solving the problem. -->
+
+### Complexity
+$$Time: O()$$
+
+$$Space: O()$$
+
+### Code
+```
+# code
+```
