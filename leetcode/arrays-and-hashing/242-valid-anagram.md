@@ -27,29 +27,55 @@ Output: false
 ## Naive Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+First check if the length of both strings are the same. Use a hashmap to record the frequencies of each character in the first string. Loop through the second string and also record the frequencies of it's characters. Loop through one of the dictionaries and compare the frequencies of both dictionaries, if they are the same then it's an anagram
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
-# code
+def isAnagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    freq_s, freq_t = {}, {}
+
+    for i in range(len(s)):
+        freq_s[s[i]] = 1 + freq_s.get(s[i], 0)
+        freq_t[t[i]] = 1 + freq_t.get(t[i], 0)
+
+    for key in freq_s:
+        if key not in freq_t:
+            return False
+        if freq_s[key] != freq_t[key]:
+            return False
+    
+    return True
 ```
 
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Sort the strings to have the same order and compare the strings
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(nlogn)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def isAnagram(self, s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    s = sorted(s)
+    t = sorted(t)
+
+    if s != t:
+        return False
+
+    return True
 ```
