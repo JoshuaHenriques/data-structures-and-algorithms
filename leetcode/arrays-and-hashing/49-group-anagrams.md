@@ -38,7 +38,7 @@ strs[i] consists of lowercase English letters.
 Iterate through the list, group the words using a hashmap using the sorted string as the key and the list of words that when sorted equal the key
 
 ### Complexity
-$$Time: O(n)$$
+$$Time: O(nlogn)$$
 
 $$Space: O(n)$$
 
@@ -57,7 +57,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+For each string in list count the characters and store the count in an a-z count array and use that as the key in a hashmap with a list of the words that have the same a-z count array
 
 ### Complexity
 $$Time: O(n)$$
