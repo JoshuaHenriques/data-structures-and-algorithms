@@ -138,7 +138,7 @@ def trap(self, height: List[int]) -> int:
                 print(f'left water: {water}')
             
             i +=1
-        elif max_l > max_r:
+        else:
             max_r = max(max_r, height[j])
             print(f'max_r: {max_r}')
 
