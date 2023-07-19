@@ -24,5 +24,3 @@ def containsDuplicate3(nums: List[int]) -> bool:
         elif nums[i] == nums[j]:
             return True
         j += 1
-
-print(containsDuplicate(nums))
