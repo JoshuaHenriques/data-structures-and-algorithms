@@ -33,12 +33,12 @@ s1 and s2 consist of lowercase English letters.
 ### Complexity
 $$Time: O(26*n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
 def checkInclusion(self, s1: str, s2: str) -> bool:
-    i, j = 0, len(s1) - 1
+    i, j = 0, len(s1) - 1`
     # Use alphabet array for practice
     s1_hashmap = defaultdict(int)
     s2_hashmap = defaultdict(int)

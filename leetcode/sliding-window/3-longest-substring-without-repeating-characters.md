@@ -33,7 +33,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 s consists of English letters, digits, symbols and spaces.
 ```
 
-## Optimized Solution
+## Solution 1
 
 ### Approach
 Using the sliding window algorithm create two pointers, i and j, that start at index 0 and 1. Pass through the array and check if the character at j is in the substring before it, if it isn't then increment j to increase the window while adding to the longest substring counter and assigning it to max_longest if its the new max, if it is then reset the longest substring counter back to 1 and slide the window over by incrementing i and reassign j to i + 1.
