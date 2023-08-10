@@ -62,18 +62,3 @@ def maxArea(self, height: List[int]) -> int:
 
     return max_area
 ```
-
-## Optimized Solution
-
-### Approach
-<!-- Describe your approach to solving the problem. -->
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
-```

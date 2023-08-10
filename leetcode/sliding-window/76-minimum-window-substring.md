@@ -37,25 +37,10 @@ n == t.length
 s and t consist of uppercase and lowercase English letters.
 ```
 
-## Naive Solution
+## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
-```
-
-## Optimized Solution
-
-### Approach
-<!-- Describe your approach to solving the problem. -->
+Create two hashmaps, one will have the frequency of the characters and the second would be the frequency of characters of our window. The variables "have" and "need" will represent the characters we have and need will be the count we need. Loop through string, update window hashmap, if the char is in original hashmap and if the frequency of boths maps are equal then increment the "have" variable. While have and need are equal if our window length is less than the minimum result length then update it. In the while loop let's pop from the left pointer and update the window map if that character popped was apart of the window map decrement the need variable
 
 ### Complexity
 $$Time: O(n)$$
@@ -73,7 +58,7 @@ $$Space: O(n)$$
             countT[c] += 1
 
         have, need = 0, len(countT)
-        res, resLen = [-1, -1], float("infinity")
+        res, resLen = [-1, -1], float("infinity") ## infinity for the min
 
         l = 0
         for r in range(len(s)):
