@@ -29,7 +29,7 @@ s1 and s2 consist of lowercase English letters.
 ## Optimized Solution
 
 ### Approach
-Loop through the length of s1 to get the freq of the characters and store it in the alphabet array. Loop through range 26 and increment matches if s1count and s2count are the same at that index. 
+Loop through the length of s1 to get the freq of the characters and store it in the alphabet array. Loop through range 26 and increment matches if s1count and s2count are the same at that index but incrementing it would make it took large by one so we have to decrement matches if they were equal. Do the same with the left pointer but the inverse
 
 ### Complexity
 $$Time: O(26*n)$$
