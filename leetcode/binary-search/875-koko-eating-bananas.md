@@ -37,10 +37,19 @@ piles.length <= h <= 109
 ```
 
 ## Solution
-At most the bananas per hour is the max value in piles. A brute force way would be to check each k in the range from 1 to the max value in piles. Using binary search we can check the middle of that range to see if the computed k is less than the given h or not and record it if it's a new minimum and adjust the pointers accordingly.
 
 ### Approach
-    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+At most the bananas per hour is the max value in piles. A brute force way would be to check each k in the range from 1 to the max value in piles. Using binary search we can check the middle of that range to see if the computed k is less than the given h or not and record it if it's a new minimum and adjust the pointers accordingly.
+    
+
+### Complexity
+$$Time: O(logn)$$
+
+$$Space: O(1)$$
+
+### Code
+```
+def minEatingSpeed(self, piles: List[int], h: int) -> int:
         l, r = 1, max(piles)
         minSpeed = r
 
@@ -58,13 +67,4 @@ At most the bananas per hour is the max value in piles. A brute force way would 
                 l = k + 1
 
         return minSpeed
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
 ```
