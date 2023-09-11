@@ -41,7 +41,7 @@ nums is an ascending array that is possibly rotated.
 ## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+If the middle value is greater than our l pointer value then we know we're in the left sorted portion and if not we're in the right sorted portion. If we're in the left portion check if target is greater than the middle value or if target is greater than the left pointer value we update our left pointer and the inverse if we're in the right sorted portion
 
 ### Complexity
 $$Time: O(logn)$$
