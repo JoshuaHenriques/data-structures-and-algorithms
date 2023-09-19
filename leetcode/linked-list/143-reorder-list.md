@@ -72,7 +72,7 @@ def reorderList(self, head: Optional[ListNode]) -> None:
 ## Optimized Solution
 
 ### Approach
-Rewatch video.
+Using a slow and fast pointer to pass through the linked list we're able to divide it into two portions. When the fast pointer reaches the end the slow pointer should be at the halfway point of the list. (If linked list is even the slow pointer will stop right before the start of the second portion so use slow.next and if it's odd then still use slow.next for the start so the second portion is smaller than the first) Take the second portion of the list and resverse it then we can read both portions and merge them together.
 
 ### Complexity
 $$Time: O(n)$$
