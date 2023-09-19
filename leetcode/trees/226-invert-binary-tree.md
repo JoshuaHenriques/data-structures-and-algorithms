@@ -31,7 +31,7 @@ The number of nodes in the tree is in the range [0, 100].
 
 ## BFS Solution
 
-### Approach
+### Approach (Inorder?)
 Using depth first search we can look at the root node and swap the positions of the left and right child and recursively call invertTree on the left and right subtree.
 
 ### Complexity
@@ -54,8 +54,8 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 
 ## Iterative Solution
 
-### Approach
-<!-- Describe your approach to solving the problem. -->
+### Approach (Preorder?)
+To do this iteratively we need a stack to store to access the nodes. Add the root node and while the stack isn't empty swap the order of the left and right child and then if they exist add them to the stack
 
 ### Complexity
 $$Time: O(n)$$
@@ -64,13 +64,31 @@ $$Space: O(n)$$
 
 ### Code
 ```
+def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    if not root:
+        return root
 
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        
+        temp = node.left
+        node.left = node.right
+        node.right = temp
+
+        if node.left:
+            stack.append(node.left)
+        
+        if node.right:
+            stack.append(node.right)    
+
+    return root     
 ```
 
 ## BFS Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+To do this iteratively and using BFS algorithm we need a queue to access the nodes. Similarly to using a stack we can use a queue.
 
 ### Complexity
 $$Time: O(n)$$
@@ -79,5 +97,25 @@ $$Space: O(n)$$
 
 ### Code
 ```
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return root
 
+        queue = deque()
+        queue.append(root)
+        while queue:
+            node = queue.popLeft()
+            # node = queue.pop(0)
+
+            temp = node.left
+            node.left = node.right
+            node.right = temp
+
+            if node.left:
+                queue.append(node.left)
+
+            if node.right:
+                queue.append(node.right)
+
+        return root        
 ```
