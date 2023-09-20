@@ -52,7 +52,7 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
     return root
 ```
 
-## Iterative Solution
+## Iterative DFS Solution
 
 ### Approach (Preorder?)
 To do this iteratively we need a stack to store to access the nodes. Add the root node and while the stack isn't empty swap the order of the left and right child and then if they exist add them to the stack
@@ -85,7 +85,7 @@ def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
     return root     
 ```
 
-## BFS Solution
+## BFS Solution (Level order traversal)
 
 ### Approach
 To do this iteratively and using BFS algorithm we need a queue to access the nodes. Similarly to using a stack we can use a queue.
