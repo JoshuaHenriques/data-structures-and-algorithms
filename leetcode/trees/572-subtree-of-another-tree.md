@@ -80,18 +80,3 @@ def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
                 self.isSameTree(p.right, q.right))
     return False
 ```
-
-## Optimized Solution
-
-### Approach
-<!-- Describe your approach to solving the problem. -->
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
-```
