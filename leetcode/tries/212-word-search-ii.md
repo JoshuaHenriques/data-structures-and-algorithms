@@ -33,7 +33,7 @@ All the strings of words are unique.
 ## Solution
 
 ### Approach
-Similar to Word Search.
+Similar to Word Search with a couple of differences. Since we're given a list of words, it's best to use a Trie to more efficently store and look up the words when needed. So first store all the words. Then we do a regular dfs approach with the current node and the current word (starting at ""). In the dfs helper function we check if row and col is out of bounds, if we've visited them before and if the character at that cell is a child of the current node we're on. If so add row and col to visited and update our curr pointer to that character, update the current word by adding the character to it then we can check if the new curr pointer is a word, if so add it to our results. Then we recursively call the dfs helper function on the adjacent cells
 
 ### Complexity
 $$Time: O()$$

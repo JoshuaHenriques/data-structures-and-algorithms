@@ -72,7 +72,7 @@ def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
 ## Optimized Solution
 
 ### Approach
-Rewatch video.
+We make sure that the A array is the smallest so we compare and reassign if we have to. We want our left partition is be close to half the total lengths of both arrays.
 
 ### Complexity
 $$Time: O(log(n+m))$$

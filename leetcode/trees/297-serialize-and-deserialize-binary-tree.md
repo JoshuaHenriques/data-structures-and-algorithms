@@ -29,7 +29,7 @@ The number of nodes in the tree is in the range [0, 104].
 ## DFS Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+We can use a preorder traversal array to help us deserialize and serialize a binary tree. To serialize we do a preorder traversal using a dfs helper function to create the result array by appending the root casted as a string. If we come across a null node we will add "N" in the array and for the rest we. We then return an array as a string. When we deserialize it we cast it back to an array and we initialize an index variable. In the dfs helper function we first check if the element we're at is null, if so, we increment the pointer and return null. If not, we create the node with the element, increment the pointer and recursively call dfs on the left and right node. Note that putting the character "N" in the array helps us know that we are at a leaf.
 
 ### Complexity
 $$Time: O(n)$$

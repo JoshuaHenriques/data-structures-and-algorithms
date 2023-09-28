@@ -39,7 +39,7 @@ At most 104 calls will be made to addWord and search.
 ## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Everything else is similar to a regular implementation of a Trie tree except the search funciton. Using a dfs helper function, we loop through the characters in the word starting from the index provided from the dfs helper function parameter and if that word is a regular character we check if its in curr.children and either update the curr pointer or return false. If the character is a "." we would go through every child in the curr's children's (their values, so their nodes) and recursively call dfs on it. Our dfs paramenters would need the remaining portion of the word we're trying to match so we pass in the index i from our for loop on the word plus one since we're going down a child (skipping the ".") and the other parameter would be the child node. If dfs returns true for any of the children then we can return true otherwise if it exhausted the child loop then we can return False. If we had a regular word then we would use the iterative portion of the dfs helper function and if the for loop is exhausted we would return the curr node isEndOfWord boolean.
 
 ### Complexity
 $$Time: O(n)$$

@@ -37,8 +37,13 @@ At most 3 * 104 calls in total will be made to insert, search, and startsWith.
 ## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+A TrieNode needs a dictionary(hashmap) to store the children, up to 26 characters, and a boolean that indicates we're at the end of a word on the path. 
 
+To insert a word we use a curr variable initialized to root and for each character in word if it's not a child of curr we then add it as a key and instantiate a TrieNode as the value and then we update the curr pointer to that child. Update that curr's isEndOfWord variable to True.
+
+To Search is similar but return false if the character is not a child of the current not and if we get through the for loop we return the isEndOfWord boolean
+
+Starts with function is the same as the search function
 ### Complexity
 $$Time: O(n)$$
 
