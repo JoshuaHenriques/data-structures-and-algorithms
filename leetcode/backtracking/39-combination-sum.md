@@ -43,13 +43,13 @@ All elements of candidates are distinct.
 
 ## Solution
 
-### Approach
-Each dfs step we can make two decisions, where we get all combinations including the element our index is looking at that add to our target value and then get all combinations excluding the element. For the parameters we have, i, which is the index of the element in candidates that we're allowed to choose, curr is the array what elements we added to the current combination, and a current total of them. So the first base case is if the current total equals the target we append it to our result arr (we append the copy of it since we are always mutating the curr array during the algorithm). Second base case if when i is out of bounds or the total is greater than target. To include candidates[i] we append it to the current combination array then recursively call dfs with the updated current array and updated the total plus that element. For the second decision we remove that same candidate from the current combination and call dfs with it so it won't be included this time and we have to increment the index so it's not looking at that element anymore and keep the total the same since it's excluded now.
+### Approach (Decision Tree)
+Each dfs step we can make two decisions, where we get all combinations including the element our index is looking at that add to our target value and then get all combinations excluding the element. For the parameters we have, i, which is the index of the element in candidates that we're allowed to choose, curr is the array what elements we added to the current combination, and a current total of them. So the first base case is if the current total equals the target we append it to our result arr (we append the copy of it since we are always mutating the curr array during the algorithm). Second base case is when i is out of bounds or the total is greater than target. To include candidates[i] we append it to the current combination array then recursively call dfs with the updated current array and updated the total plus that element. For the second decision we remove that same candidate from the current combination and call dfs so it won't be included this time and we have to increment the index so it's not looking at that element anymore and keep the total the same since it's excluded now.
 
 ### Complexity
 $$Time: O(2^target)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
