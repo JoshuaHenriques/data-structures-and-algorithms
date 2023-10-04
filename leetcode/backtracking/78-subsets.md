@@ -27,13 +27,13 @@ Output: [[],[0]]
 All the numbers of nums are unique.
 ```
 
-## Naive Solution
+## Solution (Decision Tree)
 
 ### Approach
-For each element that we call our recursive dfs helper function on we make two decisions, a recursive call including the element we're at and excluding the element. So we append the element to our current subset list and then we call it with that list and increment the pointer. The second decision is to call dfs without the current element
+Using a decision tree approach we create a dfs helper function with the parameters of the index of the current element we're on in the array and the current combination (can be stored outside the helper function). Our only base case of the recursive call is when the index is out of bounds. We then append the current element to the current combination and for our first decision we do a recursive call with pos incremented and our second decision is where we pop the current element from the current combination and do a recursive call.
 
 ### Complexity
-$$Time: O(n*2^n)$$
+$$Time: O(2^n)$$
 
 $$Space: O(n)$$
 
@@ -48,9 +48,7 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
 
         curr.append(nums[pos])
         dfs(pos+1, curr)
-
         result.append(curr.copy())
-
         curr.pop()
         dfs(pos+1, curr)
     
@@ -61,22 +59,21 @@ def subsets(self, nums: List[int]) -> List[List[int]]:
 ### Code
 ```
 def subsets(self, nums: List[int]) -> List[List[int]]:
-    result = []
+    res = []
 
-    subsets = []
-    def dfs(pos):
-        if pos >= len(nums):
-            result.append(subsets.copy())
+    subset = []
+
+    def dfs(i):
+        if i >= len(nums):
+            res.append(subset.copy())
             return
-
         # decision to include nums[i]
-        subsets.append(nums[pos])
-        dfs(pos+1)
+        subset.append(nums[i])
+        dfs(i + 1)
+        # decision NOT to include nums[i]
+        subset.pop()
+        dfs(i + 1)
 
-        # decision to NOT include nums[i]
-        subsets.pop()
-        dfs(pos+1)
-    
     dfs(0)
-    return result
+    return res
 ```
