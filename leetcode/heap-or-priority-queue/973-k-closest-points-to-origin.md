@@ -35,7 +35,7 @@ Explanation: The answer [[-2,4],[3,3]] would also be accepted.
 ## Naive Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Use a hashmap to have the distance as the key and the value be an array storing all points on the graph with that distance from the origin. Sort the keys and iterate through them slicing at k and append/extending that list to the result list and then return the result array also slicing at length k.
 
 ### Complexity
 $$Time: O(nlogn)$$
@@ -61,7 +61,7 @@ def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Using a minheap we can append an array to it (the first element will be the key when heapified), [distance, x, y], then we heapify it. We loop through k and just pop the values while decrementing k and appending the cords to the result array.
 
 ### Complexity
 $$Time: O(klogn)$$
