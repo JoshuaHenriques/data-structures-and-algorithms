@@ -38,32 +38,54 @@ All the tweets have unique IDs.
 At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
 ```
 
-## Naive Solution
-
-### Approach
-<!-- Describe your approach to solving the problem. -->
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
-```
-
 ## Optimized Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(k)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
-# code
+class Twitter:
+    def __init__(self):
+        self.count = 0 # time
+        self.tweetMap = defaultdict(list) # userId -> list of [count,tweetIds]
+        self.followMap = defaultdict(set) # userId -> set of followeeId        
+
+    def postTweet(self, userId: int, tweetId: int) -> None:
+        self.tweetMap[userId].append([self.count, tweetId])
+        self.count -= 1 # used for a minheap
+
+    def getNewsFeed(self, userId: int) -> List[int]:
+        res = [] # ordered starting from recent
+        minHeap = []
+
+        self.followMap[userId].add(userId)
+        for followeeId in self.followMap[userId]:
+            if followeeId in self.tweetMap:
+                index = len(self.tweetMap[followeeId]) - 1
+                count, tweetId = self.tweetMap[followeeId][index]
+                minHeap.append([count, tweetId, followeeId, index - 1])
+
+        heapq.heapify(minHeap)
+        while minHeap and len(res) < 10:
+            count, tweetId, followeeId, index = heapq.heappop(minHeap)
+            res.append(tweetId)
+
+            if index >= 0:
+                count, tweetId = self.tweetMap[followeeId][index]
+                heapq.heappush(minHeap, [count, tweetId, followeeId, index - 1])
+
+        return res
+
+    def follow(self, followerId: int, followeeId: int) -> None: # O(1) because map
+        self.followMap[followerId].add(followeeId)
+
+    def unfollow(self, followerId: int, followeeId: int) -> None: # O(1) because set
+        if followeeId in self.followMap[followerId]:
+            self.followMap[followerId].remove(followeeId)
 ```
