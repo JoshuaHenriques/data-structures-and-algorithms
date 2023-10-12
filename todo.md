@@ -10,3 +10,4 @@
 ## Notes
 * List all data structures and their O() operations
 * Write notes on all patterns
+* Recalcualte time and space complexity when reviewing (Trees)
