@@ -8,9 +8,10 @@
 * 355 Design Twitter
 
 ## Notes
+* Rename to dsa
 * List all data structures and their O() operations
 * Write notes on all patterns
 * * Backtracking: decision trees
-* * Linked List: Floyd's tortoise and hare algorith
+* * Linked List: Floyd's tortoise and hare algorithm
  (cycle-finding algorithm)
 * Recalcualte time and space complexity when reviewing (Trees)
