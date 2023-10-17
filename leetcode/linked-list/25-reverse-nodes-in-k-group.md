@@ -92,7 +92,7 @@ def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+We create a healper function to get the kth node from a node. `groupPrev` is to keep track of the node before the start of a k-group, `groupPrev.next` would be the start of a k-group. `groupNext` to keep track of the node right after the group. While True, until we get to the last group in the linked list and it's not big enough to group reverse it. We call our getKth helper function to get the kth node passing in groupPrev. We now reverse the group as usual however we don't set prev to None because it will break our linked list so we set it to the groupNext node. The reverse ends when curr equals the end of the group, groupNext. Now we have to connect that reversed group properly by setting it to the node that keeps track of right before the start of the group so we assign `groupPrev.next` to the kth node. and set the old start node of that group as the new `groupPrev` since that is now the node right before the start of another group.
 
 ### Complexity
 $$Time: O()$$
@@ -112,7 +112,7 @@ def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         groupNext = kth.next
 
         # reverse group
-        prev = kth.next
+        prev = groupNext
         curr = groupPrev.next
         while curr != groupNext:
             nxt = curr.next
@@ -124,8 +124,6 @@ def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         groupPrev.next = kth
         groupPrev = temp
     return dummy.next
-
-
 
 def getKth(self, curr, k):
     while curr and k > 0:
