@@ -4,6 +4,7 @@
 * 229 Majority Element II
 
 ## Write Approach
+* 25 Reverse Nodes in k-Group
 * 169 Majority Element I
 * 355 Design Twitter
 
