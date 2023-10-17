@@ -4,15 +4,13 @@
 * 229 Majority Element II
 
 ## Write Approach
-* 25 Reverse Nodes in k-Group
 * 169 Majority Element I
 * 355 Design Twitter
 
 ## Notes
-* Rename to dsa
 * List all data structures and their O() operations
 * Write notes on all patterns
 * * Backtracking: decision trees
 * * Linked List: Floyd's tortoise and hare algorithm
  (cycle-finding algorithm)
-* Recalcualte time and space complexity when reviewing (Trees)
+* Recalculate time and space complexity when reviewing (Trees)
