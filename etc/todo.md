@@ -9,4 +9,3 @@
 
 ## Notes
 * Recalculate time and space complexity when reviewing (Trees)
-* Merge algo-impl and data-struc-impl into this repo
