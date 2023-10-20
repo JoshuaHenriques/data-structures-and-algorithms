@@ -101,8 +101,11 @@
 * It's an optimal solution for the maximum subarray problem.
 
 #### Topological Sort
-* Useful in finding a linear ordering of vertices in a directed acyclic graph (DAG).
-* Used to find a linear ordering of elements that have dependencies on each other. For example, if event ‘B’ is dependent on event ‘A’, ‘A’ comes before ‘B’ in topological ordering.
+* Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u-v, vertex u comes before v in the ordering.
+* A course has 3 possible states:
+    * visited -> crs has been added to the output
+    * visiting -> crs not added to output, but added to cycle
+    * unvisited -> crs not added to output or cycle
 
 
 ## 1-D Dynamic Programming

@@ -39,9 +39,9 @@ All the pairs prerequisites[i] are unique.
 Create an adjacency map and populate it by iterating through the prerequisites (edges). For each numCourses (vertex) in the adjacency map we call our dfs helper function. In our dfs function we first check if the graph has a cycle by seeing if we visited this vertext before, if so we return False, if not we add it to the visited set. If the vertex has no adjacent vertices then we know can complete that course or visit that node. If it has adjacent vertices then we recursively call the dfs function on each one and if it didn't return false we pop that vertex from the list and from the visited set. Return true it looped through everything.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(E + V)$$
 
-$$Space: O()$$
+$$Space: O(E + V)$$
 
 ### Code
 ```
@@ -70,8 +70,8 @@ def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         for v in adjMap[vertex]:
             if not dfs(v):
                 return False
-            adjMap[vertex].pop(0)
-            visited.remove(v)
+        adjMap[vertex] = []
+        visited.remove(v)
 
         return True
 
@@ -79,6 +79,42 @@ def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         if not dfs(vertex):
             return False
         visited = set()
+
+    return True
+```
+
+### Cleaner Code
+```
+def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+    adjMap = defaultdict(list)
+    vertices = numCourses
+    edges = prerequisites
+
+    # populate adjMap
+    for v1, v2 in edges:
+        adjMap[v1].append(v2)
+        adjMap[v2]
+
+    visiting = set()
+
+    def dfs(vertex):
+        if vertex in visiting:
+            return False
+        if adjMap[vertex] == []:
+            return True
+            
+        visiting.add(vertex)
+
+        for v in adjMap[vertex]:
+            if not dfs(v):
+                return False
+        adjMap[vertex] = []
+        visiting.remove(vertex)
+        return True
+
+    for vertex in range(vertices):
+        if not dfs(vertex):
+            return False
 
     return True
 ```
