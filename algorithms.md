@@ -105,11 +105,14 @@
     * visited -> crs has been added to the output
     * visiting -> crs not added to output, but added to cycle
     * unvisited -> crs not added to output or cycle
-* Post-order dfs, build the result in reverse order
+* A valid topological ordering can be computed by reversing the DFS postorder traversal starting from a vertex with no incoming edges. In case not every vertex is reachable from the starting vertex, it's necessary to “restart” the reverse DFS postorder traversal from another vertex with no incoming edges.
 
 ## Union Find
 * An algorithm that implements find and union operations on a disjoint set data structure. It finds the root parent of an element and determines whether if two elements are in the same set or not. If two elements are at different sets, merge the smaller set to the larger set.
 * Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
+
+## Dijkstra's Algorithm
+* Finds the shortest path between a given node (which is called the "source node") and all other nodes in a graph. This algorithm uses the weights of the edges to find the path that minimizes the total distance (weight) between the source node and all other nodes.
 
 ### Path Compression
 * There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
