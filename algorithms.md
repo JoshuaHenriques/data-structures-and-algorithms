@@ -58,6 +58,11 @@
 #### Identifying Pattern
 * If you’re asked to traverse a tree in a level-by-level fashion (or level order traversal)
 
+
+## Depth First Search
+* Can be used on Trees and Graphs
+* This pattern allows you to traverse a tree or graph using depth as the main factor.
+
 ### Tree DFS
 * You can use recursion (or a stack for the iterative approach) to keep track of all the previous (parent) nodes while traversing.
 * The Tree DFS pattern works by starting at the root of the tree, if the node is not a leaf you need to do three things:
@@ -68,10 +73,6 @@
 * If you’re asked to traverse a tree with in-order, preorder, or postorder DFS
 * If the problem requires searching for something where the node is closer to a leaf
 
-## Depth First Search
-* Can be used on Trees and Graphs
-* This pattern allows you to traverse a tree or graph using depth as the main factor.
-
 ## Tries
 * Ideal for efficient retrieval of keys in a dataset of strings. It's commonly used for features like autocomplete or spell check.
 
@@ -81,7 +82,7 @@
 * In many problems, we are given a set of elements such that we can divide them into two parts. To solve the problem, we are interested in knowing the smallest element in one part and the biggest element in the other part.
 * This pattern uses two heaps; A Min Heap to find the smallest element and a Max Heap to find the biggest element. The pattern works by storing the first half of numbers in a Max Heap, this is because you want to find the largest number in the first half. You then store the second half of numbers in a Min Heap, as you want to find the smallest number in the second half. At any time, the median of the current list of numbers can be calculated from the top element of the two heaps.
 
-#### Identifying Pattern
+### Identifying Pattern
 * Useful in situations like Priority Queue, Scheduling
 * If the problem states that you need to find the smallest/largest/median elements of a set
 * The best data structure to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements.
@@ -95,7 +96,7 @@
 ### Subsets
 * Involve dealing with Permutations and Combinations of a given set of elements.
 
-#### 0/1 Knapsack
+### 0/1 Knapsack
 * Useful in solving problems related to permutations and combinations.
 
 ## Topological Sort
