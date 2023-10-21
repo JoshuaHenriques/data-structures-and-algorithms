@@ -105,7 +105,7 @@
     * visited -> crs has been added to the output
     * visiting -> crs not added to output, but added to cycle
     * unvisited -> crs not added to output or cycle
-
+* Post-order dfs, build the result in reverse order
 
 ## Union Find
 * An algorithm that implements find and union operations on a disjoint set data structure. It finds the root parent of an element and determines whether if two elements are in the same set or not. If two elements are at different sets, merge the smaller set to the larger set.
