@@ -39,14 +39,35 @@ All the pairs (ui, vi) are unique. (i.e., no multiple edges.)
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Dijkstra's algorithm. First we create and populate the adjacency list using a hashmap with the list hold tuples of the target and weight. Dijkstra's algorithm involves using BFS and a minHeap (instead of queue) to keep track of the shortest path to that target vertex. While the minHeap isn't empty we pop from it and check if it's been visited before, if not we add it to the visited set and set the result time to the max of itself and the popped weight. The bfs part is us looping through each adjacent vertex and if it hasn't been visited we push it on the minHeap with the total weight, the current popped weight plus this adjacent weight, and the vertex as a tuple. In the end we'll have the minimum time it takes for each vertex to get the signal. Return -1 if would list of visited isn't the same length as the total nodes, this means the graph is disjointed
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(E*logv)$$
 
 $$Space: O()$$
 
 ### Code
 ```
-# code
+def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+    adj = { i:[] for i in range(1, n+1) }
+    for u, v, w in times:
+        adj[u].append((v, w))
+
+    minHeap = [(0, k)]
+    visited = set()
+    time = 0
+
+    while minHeap:
+        w1, n1 = heapq.heappop(minHeap)
+        if n1 in visited:
+            continue
+
+        visited.add(n1)
+        time = max(time, w1)
+
+        for n2, w2 in adj[n1]:
+            if n2 not in visited:
+                heapq.heappush(minHeap, (w2 + w1, n2))
+
+    return time if len(visited) == n else -1
 ```

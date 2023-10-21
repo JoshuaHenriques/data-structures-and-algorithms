@@ -113,6 +113,7 @@
 
 ## Dijkstra's Algorithm
 * Finds the shortest path between a given node (which is called the "source node") and all other nodes in a graph. This algorithm uses the weights of the edges to find the path that minimizes the total distance (weight) between the source node and all other nodes.
+* BFS but with a min heap
 
 ### Path Compression
 * There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
