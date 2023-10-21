@@ -4,6 +4,7 @@
 * 229 Majority Element II
 
 ## Write Approach
+* 323 Number of Connected Components In An Undirected Graph
 * 169 Majority Element I
 * 355 Design Twitter
 

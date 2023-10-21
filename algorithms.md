@@ -90,6 +90,7 @@
 ## Backtracking
 * Recursion 
 * Decision Trees
+* permutations and combinations
 
 ### Subsets
 * Involve dealing with Permutations and Combinations of a given set of elements.
@@ -97,16 +98,20 @@
 #### 0/1 Knapsack
 * Useful in solving problems related to permutations and combinations.
 
-#### Kadane's Algorithm
-* It's an optimal solution for the maximum subarray problem.
-
-#### Topological Sort
+## Topological Sort
 * Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u-v, vertex u comes before v in the ordering.
 * A course has 3 possible states:
     * visited -> crs has been added to the output
     * visiting -> crs not added to output, but added to cycle
     * unvisited -> crs not added to output or cycle
 
+
+## Union Find
+* An algorithm that implements find and union operations on a disjoint set data structure. It finds the root parent of an element and determines whether if two elements are in the same set or not. If two elements are at different sets, merge the smaller set to the larger set.
+* Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
+
+### Path Compression
+* There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
 
 ## 1-D Dynamic Programming
 
