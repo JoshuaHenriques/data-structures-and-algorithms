@@ -55,6 +55,11 @@
 * Traverse a tree and uses a queue to keep track of all the nodes of a level before jumping onto the next level
 * The Tree BFS pattern works by pushing the root node to the queue and then continually iterating until the queue is empty. For each iteration, we remove the node at the head of the queue and “visit” that node. After removing each node from the queue, we also insert all of its children into the queue.
 
+### Graph BFS
+* Multiple/simultaneous bfs
+    * 994 Rotting Oranges
+    * 286 Walls and Gates
+
 #### Identifying Pattern
 * If you’re asked to traverse a tree in a level-by-level fashion (or level order traversal)
 

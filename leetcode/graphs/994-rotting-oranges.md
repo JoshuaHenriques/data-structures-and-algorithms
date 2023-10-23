@@ -44,7 +44,7 @@ grid[i][j] is 0, 1, or 2.
 ## Solution
 
 ### Approach
-BFS approach. Key part to this is when we initially go through each cell we don't call our bfs helper function on the first rotten orange we see, we instead add each rotten orange to our queue first. Then call bfs with queue as our parameter and while there is an oranges in the queue we loop through and pop each item in the queue and push any fresh oranges to the queue that's adjacent to that one and set it to a rotten orange. After that queue iteration we can increment minutes since we don't want to increment minutes at each adjacent orange. We pass through the grid again and if we find a fresh orange we return -1, that means it was impossible.
+BFS approach. Key part to this is when we initially go through each cell we don't call our bfs helper function on the first rotten orange we see, we instead add each rotten orange to our queue first. Then call bfs with queue as our parameter and while there is an oranges in the queue we loop through and pop each item in the queue (for loop the current snapshot of the queue length) and push any fresh oranges to the queue that's adjacent to that one and set it to a rotten orange. After that queue iteration we can increment minutes since we don't want to increment minutes at each adjacent orange. We pass through the grid again and if we find a fresh orange we return -1, that means it was impossible.
 
 ### Complexity
 $$Time: O(n*m)$$
