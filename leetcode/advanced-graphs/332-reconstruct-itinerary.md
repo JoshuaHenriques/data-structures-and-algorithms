@@ -41,7 +41,7 @@ Sort the tickets first so they're in lexical order before creating the adjacency
 ### Complexity
 $$Time: O((V + E)^2)$$
 
-$$Space: O()$$
+$$Space: O(E)$$
 
 ### Code
 ```
