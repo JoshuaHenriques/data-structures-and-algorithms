@@ -35,17 +35,17 @@ $$Space: O(n)$$
 ### Code
 ```
 def longestConsecutive(self, nums: List[int]) -> int:
-        # has to be a set for O(1) loop up time vs O(n) loopup time for lists
-        num_set = set(nums)
-        max_seq = 0
+    # has to be a set for O(1) loop up time vs O(n) loopup time for lists
+    num_set = set(nums)
+    max_seq = 0
 
-        for n in nums:
-            # check if start of sequence
-            if n-1 not in num_set:
-                count = 1
-                while n+count in num_set:
-                    count += 1
-                max_seq = max(count, max_seq)
-        
-        return max_seq
+    for n in nums:
+        # check if start of sequence
+        if n-1 not in num_set:
+            count = 1
+            while n+count in num_set:
+                count += 1
+            max_seq = max(count, max_seq)
+    
+    return max_seq
 ```

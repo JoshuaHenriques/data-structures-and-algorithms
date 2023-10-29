@@ -42,7 +42,7 @@ All the pairs (ui, vi) are unique. (i.e., no multiple edges.)
 Dijkstra's algorithm. First we create and populate the adjacency list using a hashmap with the list hold tuples of the target and weight. Dijkstra's algorithm involves using BFS and a minHeap (instead of queue) to keep track of the shortest path to that target vertex. While the minHeap isn't empty we pop from it and check if it's been visited before, if not we add it to the visited set and set the result time to the max of itself and the popped weight. The bfs part is us looping through each adjacent vertex and if it hasn't been visited we push it on the minHeap with the total weight, the current popped weight plus this adjacent weight, and the vertex as a tuple. In the end we'll have the minimum time it takes for each vertex to get the signal. Return -1 if would list of visited isn't the same length as the total nodes, this means the graph is disjointed
 
 ### Complexity
-$$Time: O(E*logv)$$
+$$Time: O(E*logV)$$
 
 $$Space: O()$$
 

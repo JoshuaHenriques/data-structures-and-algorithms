@@ -123,13 +123,44 @@
 ### Path Compression
 * There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
 
+## Greedy
+* Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. So the problems where choosing locally optimal also leads to global solution are the best fit for Greedy.
+* Examples: 
+    * Kruskal's Algorithm
+    * Prim's Algorithm
+    * Dijkstra's Algorithm
+
+## Minimum Spanning Trees
+
+### Identifying Pattern
+* "Minimum cost to make all points connected"
+
+### Kruskal's Algorithm
+* Given a connected and undirected graph, a spanning tree of that graph is a subgraph that is a tree and connects all the vertices together. A single graph can have many different spanning trees. A minimum spanning tree (MST) or minimum weight spanning tree for a weighted, connected and undirected graph is a spanning tree with weight less than or equal to the weight of every other spanning tree. The weight of a spanning tree is the sum of weights given to each edge of the spanning tree. 
+* It starts to build the Minimum Spanning Tree from the vertex carrying minimum weight in the graph.
+* It traverses one node only once.
+* Kruskal’s algorithm’s time complexity is O(E log V), V being the number of vertices.
+* Kruskal’s algorithm can generate forest(disconnected components) at any instant as well as it can work on disconnected components
+* Kruskal’s algorithm runs faster in sparse graphs.
+* It generates the minimum spanning tree starting from the least weighted edge. 
+* Applications of Kruskal algorithm are LAN connection, TV Network etc.
+* Kruskal’s algorithm prefer heap data structures.
+
+### Prim's Algorithm
+* Like Kruskal’s algorithm, Prim’s algorithm is also a Greedy algorithm. It starts with an empty spanning tree. The idea is to maintain two sets of vertices. The first set contains the vertices already included in the MST, the other set contains the vertices not yet included. At every step, it considers all the edges that connect the two sets and picks the minimum weight edge from these edges. After picking the edge, it moves the other endpoint of the edge to the set containing MST. 
+* It starts to build the Minimum Spanning Tree from any vertex in the graph.
+* It traverses one node more than one time to get the minimum distance.
+* Prim’s algorithm has a time complexity of O(V2), V being the number of vertices and can be improved up to O(E log V) using Fibonacci heaps.
+* Prim’s algorithm gives connected component as well as it works only on connected graph.
+* Prim’s algorithm runs faster in dense graphs.
+* It generates the minimum spanning tree starting from the root vertex.
+* Applications of prim’s algorithm are Travelling Salesman Problem, Network for roads and Rail tracks connecting all the cities etc.
+* Prim’s algorithm prefer list data structures.
+
 ## 1-D Dynamic Programming
 
 
 ## 2-D Dynamic Programming
-
-
-## Greedy
 
 
 ## Quick Select
