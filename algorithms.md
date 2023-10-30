@@ -116,12 +116,18 @@
 * An algorithm that implements find and union operations on a disjoint set data structure. It finds the root parent of an element and determines whether if two elements are in the same set or not. If two elements are at different sets, merge the smaller set to the larger set.
 * Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
 
+### Path Compression
+* There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
+
 ## Dijkstra's Algorithm
 * Finds the shortest path between a given node (which is called the "source node") and all other nodes in a graph. This algorithm uses the weights of the edges to find the path that minimizes the total distance (weight) between the source node and all other nodes.
 * BFS but with a min heap
 
-### Path Compression
-* There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
+## Bellman-Ford's Algorithm
+* An algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers. 
+* Capable of detecting negative cycles
+    * The shortest path cannot be found if there exists a negative cycle in the graph. If we continue to go around the negative cycle an infinite number of times, then the cost of the path will continue to decrease (even though the length of the path is increasing)
+* This algorithm can be used on both weighted and unweighted graphs.
 
 ## Greedy
 * Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. So the problems where choosing locally optimal also leads to global solution are the best fit for Greedy.
@@ -131,6 +137,7 @@
     * Dijkstra's Algorithm
 
 ## Minimum Spanning Trees
+
 
 ### Identifying Pattern
 * "Minimum cost to make all points connected"
@@ -156,6 +163,7 @@
 * It generates the minimum spanning tree starting from the root vertex.
 * Applications of prim’s algorithm are Travelling Salesman Problem, Network for roads and Rail tracks connecting all the cities etc.
 * Prim’s algorithm prefer list data structures.
+
 
 ## 1-D Dynamic Programming
 

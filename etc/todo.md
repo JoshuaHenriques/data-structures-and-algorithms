@@ -4,12 +4,13 @@
 * 229 Majority Element II
 
 ## Write Approach
-* 269 Alien Dictionary
-* 1584 Min Cost to Connect All Points (Kruskal's - Union Find)
+* 787 Cheapest Flights Within K Stops
 * 323 Number of Connected Components In An Undirected Graph (Union Find)
+* 1584 Min Cost to Connect All Points (Kruskal's - Union Find)
 * 684 Redundant Connection (Union Find)
-* 169 Majority Element I
+* 269 Alien Dictionary
 * 355 Design Twitter
+* 169 Majority Element I
 
 ## Revisit
 * Union Find
