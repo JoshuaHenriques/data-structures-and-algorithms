@@ -51,7 +51,7 @@ src != dst
 ## Dijkstra's Algorithm Solution
 
 ### Approach
-Double 
+Using Dijkstra's Algorithm we first create our adjacency map, initialize our array to keep track of our steps at each city and initial our meanHeap with at the beginning of src. In our while minHeap iterations first we check if we visited the current city and it had fewer steps then the current steps, if it did then we can skip it. Second we check if our current steps is greater than k. Third we return if we hit our destination. After those check we update the current city's steps in bestVisited and BFS the neighbouring cities from our adjacency map.
 
 ### Complexity
 $$Time: O(n * len(flights) * log(n))$$
@@ -97,14 +97,30 @@ def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int
 ## Bellman-Ford Algorithm Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+We use Bellman-Ford's Algorithm because of the "at msot k stops" part of the problem since the algorithm is efficent as finding the shorest/less weighted path to all other vertices. Initialize our prices tracking array and set the src price to 0. This tells us how much the cost is to reach that city. We use a second temporary tracker so we dont update a city's price when we shouldn't have for that step because we would end up processing a path that had an extra node on it which wouldn't satisfy the k stops part of the problem. So we iterate k+1 times and each iteration we make a copy of our prices tracker and iterate through every edge. In each iteration of that we check if the price to get to "s" is "inf", which means we can't get to src. We check if the price to get to "s" plus the current edge price is less then the price it takes to get to "d", if so we update the price to get to d. We check the tempPrices[d] since there was a chance we updated that value before. After checking all the edges for that k iteration we update the original prices array. 
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(E*k)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
-# code
+def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+    prices = [float("inf")] * n
+    prices[src] = 0
+
+    for i in range(k + 1):
+        tempPrices = prices.copy()
+
+        for s, d, p in flights:
+            if prices[s] == float("inf"):
+                continue
+
+            if prices[s] + p < tempPrices[d]:
+                tempPrices[d] = prices[s] + p
+
+        prices = tempPrices
+
+    return -1 if prices[dst] == float("inf") else prices[dst]
 ```

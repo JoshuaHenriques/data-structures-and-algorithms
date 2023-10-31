@@ -4,7 +4,6 @@
 * 229 Majority Element II
 
 ## Write Approach
-* 787 Cheapest Flights Within K Stops
 * 323 Number of Connected Components In An Undirected Graph (Union Find)
 * 1584 Min Cost to Connect All Points (Kruskal's - Union Find)
 * 684 Redundant Connection (Union Find)
