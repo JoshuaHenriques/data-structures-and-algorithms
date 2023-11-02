@@ -43,13 +43,22 @@ The total cost is 6.
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(2^n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+    def dfs(num, currCost):
+        if num == len(cost):
+            return currCost
+        elif num > len(cost):
+            return currCost
+        
+        return min(dfs(num + 1, currCost + cost[num]), dfs(num + 2, currCost + cost[num]))
+                
+    return min(dfs(0, 0), dfs(1, 0))
 ```
 
 ## Memoization Solution
