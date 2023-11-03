@@ -4,6 +4,8 @@
 * 229 Majority Element II
 
 ## Write Approach
+* 198 House Robber (Dynamic Programming)
+* 746 Min Cost Climbing Stairs (Dynamic Programming)
 * 323 Number of Connected Components In An Undirected Graph (Union Find)
 * 1584 Min Cost to Connect All Points (Kruskal's - Union Find)
 * 684 Redundant Connection (Union Find)
@@ -13,6 +15,9 @@
 
 ## Revisit
 * Union Find
+* Dynamic Programming
+    * Botton Up
+    * Bottom Down
 
 ## Notes
 * Recalculate time and space complexity when reviewing (Trees)

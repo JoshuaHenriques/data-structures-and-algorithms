@@ -37,7 +37,7 @@ The total cost is 6.
 0 <= cost[i] <= 999
 ```
 
-## Naive Solution
+## Naive Solution (Time Limit Exceeded)
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
@@ -50,15 +50,13 @@ $$Space: O(1)$$
 ### Code
 ```
 def minCostClimbingStairs(self, cost: List[int]) -> int:
-    def dfs(num, currCost):
-        if num == len(cost):
-            return currCost
-        elif num > len(cost):
-            return currCost
+    def dfs(num):
+        if num >= len(cost):
+            return 0
         
-        return min(dfs(num + 1, currCost + cost[num]), dfs(num + 2, currCost + cost[num]))
+        return min(cost[num] + dfs(num + 1), cost[num] + dfs(num + 2))
                 
-    return min(dfs(0, 0), dfs(1, 0))
+    return min(dfs(0), dfs(1))
 ```
 
 ## Memoization Solution
@@ -67,26 +65,43 @@ def minCostClimbingStairs(self, cost: List[int]) -> int:
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
-# code
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+    memo = defaultdict(int)
+    def dfs(num):            
+        if num >= len(cost):
+            return 0
+
+        if num not in memo:
+            memo[num] = min(cost[num] + dfs(num + 1), cost[num] + dfs(num + 2))
+
+        return memo[num]
+    
+    return min(dfs(0), dfs(1))
 ```
 
-## Buttom Up Solution
+## Buttom Up DP Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+    cost.append(0)
+
+    for i in range(len(cost) - 3, -1, -1):
+        cost[i] += min(cost[i + 1], cost[i + 2])
+
+    return min(cost[0], cost[1])
 ```
