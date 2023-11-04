@@ -40,13 +40,23 @@ Output: 3
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(2^n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-code
+def rob(self, nums: List[int]) -> int:
+    if len(nums) == 1:
+        return nums[0]
+
+    def dfs(numsArr, i):
+            if i >= len(numsArr):
+                return 0
+            
+            return max(dfs(numsArr, i + 1), numsArr[i] + dfs(numsArr, i + 2))
+
+    return max(dfs(nums[1:], 0), dfs(nums[:-1], 0))
 ```
 
 ## Memoization Solution
@@ -55,13 +65,30 @@ code
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
-code
+def rob(self, nums: List[int]) -> int:
+    if len(nums) == 1:
+        return nums[0]
+
+    memo = {}
+    def dfs(numsArr, i):
+        if i >= len(numsArr):
+            return 0
+
+        if i not in memo:
+            memo[i] = max(dfs(numsArr, i + 1), numsArr[i] + dfs(numsArr, i + 2))
+
+        return memo[i]
+    
+    a = dfs(nums[:-1], 0)
+    memo = {}
+    b = dfs(nums[1:], 0)
+    return max(a, b)
 ```
 
 ## DP Solution
@@ -70,11 +97,25 @@ code
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-code
+def rob(self, nums: List[int]) -> int:
+    if len(nums) == 1:
+        return nums[0]
+
+    def dfs(nums):
+            rob1, rob2 = 0, 0
+
+            for n in nums:
+                newRob = max(rob1 + n, rob2)
+                rob1 = rob2
+                rob2 = newRob
+
+            return rob2
+        
+    return max(dfs(nums[1:]), dfs(nums[:-1]))
 ```

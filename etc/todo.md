@@ -4,6 +4,7 @@
 * 229 Majority Element II
 
 ## Write Approach
+* 198 House Robber II (Dynamic Programming)
 * 198 House Robber (Dynamic Programming)
 * 746 Min Cost Climbing Stairs (Dynamic Programming)
 * 323 Number of Connected Components In An Undirected Graph (Union Find)
