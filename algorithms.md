@@ -165,11 +165,38 @@
 * Prim’s algorithm prefer list data structures.
 
 
-## 1-D Dynamic Programming
+## Dynamic Programming
+* One of the most important things needed to do when solving a DP problem is to come up with a recurrence relation.
 
+#### Optimal Substructure
+* A problem is said to have optimal substructure if an optimal solution can be constructed from optimal solutions of its sub-problems
+* First identify the sub-problems and their relation and then find the solution to those sub-problems. Then use those sub-problem solutions to form the final solution 
 
-## 2-D Dynamic Programming
+#### Overlapping Sub-problems
+* Among the many sub-problems in the original problem, some of those are the same. It is more efficient to compute the solution to those same sub-problems only once and reuse them when needed
+* Memoization is a technique to remember the solution to sub-problems that was just computed
 
+### Reccurence Relation
+* "A recurrence relation is an equation that defines a sequence based on a rule that gives the next term as a function of the previous term(s)"
+* "A recurrence relation is an equation which is defined in terms of itself and the initial conditions"
+* Describes the relationship between the subproblems in a way that clearly defines how an optimal solution is computed using the solutions of the smaller sub-problems
+```
+fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
+```
+##### Coming up with a recurrence relation requires:
+* A rigorous analysis of the problem statement, a thorough understanding the given choices/decisions to explore the sub-problems
+* Work through the examples of smaller problem size to formalize the problem understand
+* Draw up the problem breakdown tree (decision tree) to visualize the sub-problems, their relationship and to verify they meet the DP properties (optimal sub-structure and overlapping sub-problems)
+* Formalize the recurrence relation for a specific small problem size, then generalize it and finally identify the base case(s)
+
+### Top Down Approach
+* The order of solving the sub-problems is essentially the same as when recursion is used to solve the recurrence relation
+* Direct translation of the recurrence relation using recursion
+* When recursion is used there are overlapping sub-problems which should be solved only once and their solution is stored and reused when needed, this concept is called memoization
+
+### Bottom Down Approach
+* Compute the solutions from left (smaller sub-problem) to right (larger sub-problem) in an iterative manner
+* First we need a data structure to hold the sub-problem solutions, then we iterate from smaller sub-problems to large ones and use the recurrence relation to compute the solution to each of the sub-problems
 
 ## Quick Select
 
