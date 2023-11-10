@@ -48,7 +48,7 @@ Explanation: "06" cannot be mapped to "F" because of the leading zero ("6" is di
 s contains only digits and may contain leading zero(s).
 ```
 
-## Naive Solution
+## Top Down Recursion (Time Limit Exceeded)
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
@@ -60,10 +60,34 @@ $$Space: O()$$
 
 ### Code
 ```
-# code
+def numDecodings(self, s: str) -> int:
+    # dp(i) = dp(i + 1) + dp(i + 2)
+
+    def dp(i):
+        # index goes out by one so we can return 1 to add to answer
+        if i == len(s):
+            return 1
+
+        # going out by two is invalid so we return 0
+        if i > len(s):
+            return 0
+
+        # when we see a "0" it becomes invalid
+        if s[i] == "0":
+            return 0
+
+        result = dp(i + 1)
+
+        # if the two digit number is valid
+        if 0 < int(s[i:i+2]) < 27:
+            result += dp(i + 2)
+
+        return result
+
+    return dp(0)
 ```
 
-## Optimized Solution
+## Memoization Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
@@ -75,5 +99,49 @@ $$Space: O()$$
 
 ### Code
 ```
-# code
+def numDecodings(self, s: str) -> int:
+    # dp(i) = dp(i + 1) + dp(i + 2)
+    memo = defaultdict(int)
+    def dp(i):
+        # index goes out by one so we can return 1 to add to answer
+        if i == len(s):
+            return 1
+
+        # going out by two is invalid so we return 0
+        if i > len(s):
+            return 0
+
+        # when we see a "0" it becomes invalid
+        if s[i] == "0":
+            return 0
+
+        if i + 1 not in memo:
+            memo[i + 1] = dp(i + 1)
+
+        result = memo[i + 1]
+
+        # if the two digit number is valid
+        if 0 < int(s[i:i+2]) < 27:
+            if i + 2 not in memo:
+                memo[i + 2] = dp(i + 2)
+            result += memo[i + 2]
+
+        return result
+
+    return dp(0)
+```
+
+## DP Solution
+
+### Approach
+<!-- Describe your approach to solving the problem. -->
+
+### Complexity
+$$Time: O(n)$$
+
+$$Space: O(1)$$
+
+### Code
+```
+
 ```
