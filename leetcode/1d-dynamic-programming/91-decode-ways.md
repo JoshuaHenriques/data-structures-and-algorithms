@@ -133,8 +133,7 @@ def numDecodings(self, s: str) -> int:
 
 ## DP Solution
 
-### Approach
-<!-- Describe your approach to solving the problem. -->
+### Approach 
 
 ### Complexity
 $$Time: O(n)$$
