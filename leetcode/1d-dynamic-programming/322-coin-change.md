@@ -41,13 +41,32 @@ Output: 0
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(2^n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def coinChange(self, coins: List[int], amount: int) -> int:
+    result = float("inf")
+    coins = sorted(coins)
+    def dfs(i, curr):
+        nonlocal result
+        if i < 0:
+            return 
+        if sum(curr) == amount:
+            result = min(result, len(curr))
+            return 
+        elif sum(curr) > amount: 
+            return 
+
+        curr.append(coins[i])
+        dfs(i, curr.copy())
+        curr.pop()
+        dfs(i - 1, curr.copy())
+    
+    dfs(len(coins) - 1, [])
+    return -1 if result == float("inf") else result
 ```
 
 ## Memoization Solution
@@ -56,9 +75,9 @@ $$Space: O()$$
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
@@ -85,15 +104,15 @@ def coinChange(self, coins: List[int], amount: int) -> int:
     return result if result != float("inf") else -1
 ```
 
-## DP Solution
+## DP Solution (With array)
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```

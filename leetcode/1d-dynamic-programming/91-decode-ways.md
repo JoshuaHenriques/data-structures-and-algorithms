@@ -54,9 +54,9 @@ s contains only digits and may contain leading zero(s).
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(2^n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
@@ -93,9 +93,9 @@ def numDecodings(self, s: str) -> int:
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```
@@ -160,123 +160,4 @@ def numDecodings(self, s: str) -> int:
             dp[i] += dp[i + 2]
 
     return dp[0]   
-```
-
-### Progress Code
-```
- # dp(i) = dp(i + 1) + dp(i + 2)
-
-        
-
-        # Memoization
-        # memo = defaultdict(int)
-        # def dp(i):
-        #     # index goes out by one so we can return 1 to add to answer
-        #     if i == len(s):
-        #         return 1
-
-        #     # going out by two is invalid so we return 0
-        #     if i > len(s):
-        #         return 0
-
-        #     # when we see a "0" it becomes invalid
-        #     if s[i] == "0":
-        #         return 0
-
-        #     if i + 1 not in memo:
-        #         memo[i + 1] = dp(i + 1)
-
-        #     result = memo[i + 1]
-
-        #     # if the two digit number is valid
-        #     if 0 < int(s[i:i+2]) < 27:
-        #         if i + 2 not in memo:
-        #             memo[i + 2] = dp(i + 2)
-        #         result += memo[i + 2]
-
-        #     return result
-
-        # return dp(0)
-
-        # Top Down Recursion (Time Limit Exceeded)
-        # def dp(i):
-        #     # index goes out by one so we can return 1 to add to answer
-        #     if i == len(s):
-        #         return 1
-
-        #     # going out by two is invalid so we return 0
-        #     if i > len(s):
-        #         return 0
-
-        #     # when we see a "0" it becomes invalid
-        #     if s[i] == "0":
-        #         return 0
-
-        #     result = dp(i + 1)
-
-        #     # if the two digit number is valid
-        #     if 0 < int(s[i:i+2]) < 27:
-        #         result += dp(i + 2)
-
-        #     return result
-
-        # return dp(0)
-
-        # visited = set()
-        # def dp(i):
-        #     if i >= len(s):
-        #         return 1
-        #     if s[i] == "0":
-        #         return 0
-        #     if i-1 >= 0 and i+1 < len(s) and s[i-1:i+1][0] == "0":
-        #         return 0
-
-            # print(s[i-1:i+1])
-            # can't be greater than 26
-            # if i >= 1 and int(s[i-1:i+1]) > 26:
-            #     return 0
-
-            # if s[i-1:i+1] in visited:
-            #     return 0
-
-            # visited.add(s[i-1:i+1])
-
-            # have all these conditionals check first before calling these
-            # so we wouldn't call dp(i+1) if it's greater than 26
-            # first digit is valid when its 1 then second digit is valid from 0-9
-            # first digit is valid when its 2 then second digit is valid from 0-6
-
-            # add one to the global variable instead of returning it and adding 1
-            # or return 1 when we're at the end and everything is valid?
-            
-            # return dp(i+1) + dp(i+2)
-            # dp(0) = 1 + dp(1) + dp(2)
-            # dp(1) = 1 + dp(2) + dp(3)
-            # dp(2) = 1 + dp(3) + dp(4)
-            # dp(3) = 0
-            # dp(4) = 0
-
-
-        # return dp(0)
-        # return dp(0) + dp(1) ??
-
-        # def dp(string):
-        #     if string[0] == "0":
-        #         return 0
-        #     elif len(string) > 0 and len(string) <= 3:
-        #         if len(string) == 3:
-        #             if int(string[1:]) > 26:
-        #                 return 2
-        #         elif len(string) == 2:
-        #             if int(string) > 26:
-        #                 return 1
-                
-        #         if string[len(string) - 1] == "0":
-        #             return len(string) - 1
-
-        #         return len(string)
-            
-        #     return dp(string[0:1]) + dp(string[:2]) + dp(string[1:])
-            
-        # return dp(s)
 ```
