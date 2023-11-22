@@ -99,7 +99,7 @@ def wordBreak(self, s: str, wordDict: List[str]) -> bool:
     return dfs(0, 0)
 ```
 
-## DP With Array Solution
+## DP Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
