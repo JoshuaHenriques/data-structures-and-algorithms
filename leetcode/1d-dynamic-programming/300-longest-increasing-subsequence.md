@@ -44,27 +44,25 @@ $$Space: O()$$
 ### Code
 ```
 def lengthOfLIS(self, nums: List[int]) -> int:
-    lis = []
-    result = 0
-
-    def dfs(i, arr):
-        nonlocal result
+    def dfs(i):
         if i >= len(nums):
-            return
-            
-        if nums[i] > arr[-1]:
-            arr.append(nums[i])
-            result = max(result, len(arr) - 1)
-            dfs(i + 1, arr.copy())
-            arr.pop()
+            return 0
 
-        dfs(i + 1, arr.copy())
+        res = 1
+        for j in range(i + 1, len(nums)):
+            if nums[i] < nums[j]:
+                res = max(res, dfs(j) + 1)
 
-    dfs(0, [float("-inf")])
+        return res
+
+    result = 0
+    for k in range(len(nums)):
+        result = max(result, dfs(k))
+
     return result
 ```
 
-## Optimized Solution
+## Memoization (W/Out Backtracking) Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
@@ -76,5 +74,40 @@ $$Space: O()$$
 
 ### Code
 ```
-# code
+def lengthOfLIS(self, nums: List[int]) -> int:
+    memo = defaultdict(int)
+    def dfs(i):
+        if i in memo:
+            return memo[i]
+
+        if i >= len(nums):
+            return 0
+
+        memo[i] = 1
+        for j in range(i + 1, len(nums)):
+            if nums[i] < nums[j]:
+                memo[i] = max(memo[i], dfs(j) + 1)
+
+        return memo[i]
+
+    result = 0
+    for k in range(len(nums)):
+        result = max(result, dfs(k))
+
+    return result
+```
+
+## DP Solution
+
+### Approach
+<!-- Describe your approach to solving the problem. -->
+
+### Complexity
+$$Time: O()$$
+
+$$Space: O()$$
+
+### Code
+```
+
 ```
