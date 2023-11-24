@@ -44,13 +44,23 @@ text1 and text2 consist of only lowercase English characters.
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(2^(m+n))$$
 
 $$Space: O()$$
 
 ### Code
 ```
-# code
+def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+    def dfs(i, j):
+        if i >= len(text1) or j >= len(text2):
+            return 0
+
+        if text1[i] == text2[j]:
+            return dfs(i + 1, j + 1) + 1
+
+        return max(dfs(i + 1, j), dfs(i, j + 1))
+
+    return dfs(0, 0)
 ```
 
 ## Memoization Solution
@@ -65,7 +75,23 @@ $$Space: O()$$
 
 ### Code
 ```
-# code
+def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+    memo = [[-1] * len(text2) for _ in range(len(text1))]
+    def dfs(i, j):
+        if i >= len(text1) or j >= len(text2):
+            return 0
+
+        if memo[i][j] != -1:
+            return memo[i][j]
+
+        if text1[i] == text2[j]:
+            memo[i][j] = dfs(i + 1, j + 1) + 1
+            return memo[i][j]
+
+        memo[i][j] = max(dfs(i + 1, j), dfs(i, j + 1))
+        return memo[i][j]
+
+    return dfs(0, 0)
 ```
 
 ## DP Solution
@@ -80,5 +106,15 @@ $$Space: O()$$
 
 ### Code
 ```
-# code
+def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+    memo = [[0] * (len(text2) + 1) for _ in range(len(text1) + 1)]
+    
+    for i in range(len(text1) - 1, -1, -1):
+        for j in range(len(text2) - 1, -1, -1):
+            if text1[i] == text2[j]:
+                memo[i][j] = 1 + memo[i + 1][j + 1]
+            else:
+                memo[i][j] = max(memo[i + 1][j], memo[i][j + 1])
+
+    return memo[0][0]
 ```
