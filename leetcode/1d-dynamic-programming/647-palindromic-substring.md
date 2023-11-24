@@ -63,7 +63,7 @@ def countSubstrings(self, s: str) -> int:
         return result
 ```
 
-## Dynamic Programming Solution 
+## 2D Dynamic Programming Solution 
 
 ### Approach
 sub(i, j) = s[i] == s[j] && dp[i+1][j-1] == 1
