@@ -93,17 +93,6 @@
 * The best data structure to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements.
 * Whenever you’re given ‘K’ sorted arrays, you can use a Heap to efficiently perform a sorted traversal of all the elements of all arrays.
 
-## Backtracking
-* Recursion 
-* Decision Trees
-* permutations and combinations
-
-### Subsets
-* Involve dealing with Permutations and Combinations of a given set of elements.
-
-### 0/1 Knapsack
-* Useful in solving problems related to permutations and combinations.
-
 ## Topological Sort
 * Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u-v, vertex u comes before v in the ordering.
 * A course has 3 possible states:
@@ -197,6 +186,17 @@ fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 ### Bottom Down Approach
 * Compute the solutions from left (smaller sub-problem) to right (larger sub-problem) in an iterative manner
 * First we need a data structure to hold the sub-problem solutions, then we iterate from smaller sub-problems to large ones and use the recurrence relation to compute the solution to each of the sub-problems
+
+## Backtracking
+* Recursion 
+* Decision Trees
+* permutations and combinations
+
+### Subsets
+* Involve dealing with Permutations and Combinations of a given set of elements.
+
+### 0/1 Knapsack
+* Useful in solving problems related to permutations and combinations.
 
 ## Quick Select
 
