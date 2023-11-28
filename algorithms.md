@@ -55,10 +55,6 @@
 * Traverse a tree and uses a queue to keep track of all the nodes of a level before jumping onto the next level
 * The Tree BFS pattern works by pushing the root node to the queue and then continually iterating until the queue is empty. For each iteration, we remove the node at the head of the queue and “visit” that node. After removing each node from the queue, we also insert all of its children into the queue.
 
-### Graph BFS
-* Multiple/simultaneous bfs
-    * 994 Rotting Oranges
-    * 286 Walls and Gates
 
 #### Identifying Pattern
 * If you’re asked to traverse a tree in a level-by-level fashion (or level order traversal)
@@ -93,7 +89,27 @@
 * The best data structure to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements.
 * Whenever you’re given ‘K’ sorted arrays, you can use a Heap to efficiently perform a sorted traversal of all the elements of all arrays.
 
-## Topological Sort
+## Graphs
+
+### Graph BFS
+* Multiple/simultaneous bfs
+    * 994 Rotting Oranges
+    * 286 Walls and Gates
+
+
+### Path Compression
+* There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
+
+### Greedy
+* Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. So the problems where choosing locally optimal also leads to global solution are the best fit for Greedy.
+* Examples: 
+    * Kruskal's Algorithm
+    * Prim's Algorithm
+    * Dijkstra's Algorithm
+
+## Graph Patterns:
+
+### Topological Sort
 * Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u-v, vertex u comes before v in the ordering.
 * A course has 3 possible states:
     * visited -> crs has been added to the output
@@ -101,35 +117,23 @@
     * unvisited -> crs not added to output or cycle
 * A valid topological ordering can be computed by reversing the DFS postorder traversal starting from a vertex with no incoming edges. In case not every vertex is reachable from the starting vertex, it's necessary to “restart” the reverse DFS postorder traversal from another vertex with no incoming edges.
 
-## Union Find
+### Union Find
 * An algorithm that implements find and union operations on a disjoint set data structure. It finds the root parent of an element and determines whether if two elements are in the same set or not. If two elements are at different sets, merge the smaller set to the larger set.
 * Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
 
-### Path Compression
-* There are several algorithms for Find that achieve the asymptotically optimal time complexity. One family of algorithms, known as path compression, makes every node between the query node and the root point to the root.
-
-## Dijkstra's Algorithm
+### Dijkstra's Algorithm
 * Finds the shortest path between a given node (which is called the "source node") and all other nodes in a graph. This algorithm uses the weights of the edges to find the path that minimizes the total distance (weight) between the source node and all other nodes.
 * BFS but with a min heap
 
-## Bellman-Ford's Algorithm
+### Bellman-Ford's Algorithm
 * An algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers. 
 * Capable of detecting negative cycles
     * The shortest path cannot be found if there exists a negative cycle in the graph. If we continue to go around the negative cycle an infinite number of times, then the cost of the path will continue to decrease (even though the length of the path is increasing)
 * This algorithm can be used on both weighted and unweighted graphs.
 
-## Greedy
-* Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. So the problems where choosing locally optimal also leads to global solution are the best fit for Greedy.
-* Examples: 
-    * Kruskal's Algorithm
-    * Prim's Algorithm
-    * Dijkstra's Algorithm
 
-## Minimum Spanning Trees
+### Minimum Spanning Trees
 
-
-### Identifying Pattern
-* "Minimum cost to make all points connected"
 
 ### Kruskal's Algorithm
 * Given a connected and undirected graph, a spanning tree of that graph is a subgraph that is a tree and connects all the vertices together. A single graph can have many different spanning trees. A minimum spanning tree (MST) or minimum weight spanning tree for a weighted, connected and undirected graph is a spanning tree with weight less than or equal to the weight of every other spanning tree. The weight of a spanning tree is the sum of weights given to each edge of the spanning tree. 
@@ -155,7 +159,7 @@
 
 
 ## Dynamic Programming
-* One of the most important things needed to do when solving a DP problem is to come up with a recurrence relation.
+One of the most important things needed to do when solving a DP problem is to come up with a recurrence relation.
 
 #### Optimal Substructure
 * A problem is said to have optimal substructure if an optimal solution can be constructed from optimal solutions of its sub-problems
@@ -172,7 +176,7 @@
 ```
 fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 ```
-##### Coming up with a recurrence relation requires:
+#### Coming up with a recurrence relation requires:
 * A rigorous analysis of the problem statement, a thorough understanding the given choices/decisions to explore the sub-problems
 * Work through the examples of smaller problem size to formalize the problem understand
 * Draw up the problem breakdown tree (decision tree) to visualize the sub-problems, their relationship and to verify they meet the DP properties (optimal sub-structure and overlapping sub-problems)
@@ -187,7 +191,7 @@ fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 * Compute the solutions from left (smaller sub-problem) to right (larger sub-problem) in an iterative manner
 * First we need a data structure to hold the sub-problem solutions, then we iterate from smaller sub-problems to large ones and use the recurrence relation to compute the solution to each of the sub-problems
 
-## Backtracking
+### Backtracking
 * Recursion 
 * Decision Trees
 * permutations and combinations
@@ -195,8 +199,22 @@ fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 ### Subsets
 * Involve dealing with Permutations and Combinations of a given set of elements.
 
+## DP Patterns:
+
+### Shortest Path (eg: Unique Paths I/II)
+
+
+### Fibonacci Sequence (eg: House Thief, Jump Game)
+
+
+### Longest Common Substring/Subsequeunce
+
+
 ### 0/1 Knapsack
 * Useful in solving problems related to permutations and combinations.
+
+### Unbounded Knapsack
+
 
 ## Quick Select
 
