@@ -16,9 +16,9 @@
 
 ## Revisit
 * Union Find
-* Dynamic Programming
-    * Botton Up
-    * Bottom Down
+
+## Learn
+* Merge Sort
 
 ## Notes
 * Recalculate time and space complexity when reviewing (Trees)
