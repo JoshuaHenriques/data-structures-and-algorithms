@@ -51,7 +51,7 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
+```py
 def isMatch(self, s: str, p: str) -> bool:
     def dfs(i, j):
         if j == len(p):
@@ -80,7 +80,7 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
+```py
 def isMatch(self, s: str, p: str) -> bool:
     memo = {}
     
@@ -115,7 +115,7 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
+```py
 def isMatch(self, s: str, p: str) -> bool:
     s, p = ' '+ s, ' '+ p
     lenS, lenP = len(s), len(p)

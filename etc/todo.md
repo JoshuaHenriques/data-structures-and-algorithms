@@ -21,6 +21,7 @@
 * Merge Sort
 
 ## Notes
+* add py to all code blocks
 * Recalculate time and space complexity when reviewing (Trees)
     * Write explanations for time and space complexity?
 * "Most Common Concepts for Coding Interviews" to help group algorithms.md

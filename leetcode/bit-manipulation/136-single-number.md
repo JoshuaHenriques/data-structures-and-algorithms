@@ -35,7 +35,7 @@ Each element in the array appears twice except for one element which appears onl
 ## Solution
 
 ### Approach
-Any number xor with 0 will just be the number. A number xor the same number will always be 0. So we loop through the array and xor num with result. At the end result will have the single number.
+Any number xor with 0 will just be the number. A number xor the same number will always be 0. If they are two different numbers then we'll always get 1. So we loop through the array and xor num with result. At the end result will have the single number.
 
 ### Complexity
 $$Time: O(n)$$
@@ -46,6 +46,7 @@ $$Space: O(1)$$
 ```py
 def singleNumber(self, nums: List[int]) -> int:
     res = 0
+
     for n in nums:
         res = n ^ res
     
