@@ -96,7 +96,7 @@ def maxCoins(self, nums: List[int]) -> int:
 
     return dfs(nums)
 ```
-## Bottom Up Solution
+## Meomoization Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
