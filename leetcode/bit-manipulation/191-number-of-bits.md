@@ -58,7 +58,7 @@ def hammingWeight(self, n: int) -> int:
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+n  & (n - 1) is a trick to let us not have to process the 0's in the integer.
 
 ### Complexity
 $$Time: O()$$
@@ -66,6 +66,11 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
-# code
+```py
+def hammingWeight(self, n: int) -> int:
+    res = 0
+    while n:
+        n = n & (n - 1) 
+        res += 1
+    return res
 ```
