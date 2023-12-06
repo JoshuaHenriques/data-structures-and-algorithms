@@ -35,15 +35,15 @@ Explanation: The input binary string 11111111111111111111111111111101 has a tota
 The input must be a binary string of length 32.
 ```
 
-## Naive Solution
+## Solution 1
 
 ### Approach
 Two ways to check if bit is a '1', & (and) the input '1' by '1' or % (mod) input '1' by '2' will return 1 and if '0' it would return '0'. Iterate through the bits by shifting to the right after checking if it's a one, can also / by 2 will also shift by 1.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(1)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```py
@@ -55,15 +55,15 @@ def hammingWeight(self, n: int) -> int:
   return res
 ```
 
-## Optimized Solution
+## Solution 2
 
 ### Approach
 n  & (n - 1) is a trick to let us not have to process the 0's in the integer.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(1)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```py
