@@ -35,29 +35,46 @@ Explanation:
 ## Naive Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+For each number in range n, we count the number of 1's and append to result array.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(nlogn)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
-```
-# code
+```py
+def countBits(self, n: int) -> List[int]:
+    res = []
+    for n in range(0, n + 1):
+        cnt = 0
+        while n:
+            n = n & (n - 1)
+            cnt += 1
+        res.append(cnt)
+    return res
 ```
 
 ## Optimized Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Refer to Neetcode's video on this type of solution.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
-```
-# code
+```py
+def countBits(self, n: int) -> List[int]:
+    dp = [0] * (n + 1)
+    offset = 1
+
+    for i in range(1, n + 1):
+        if offset * 2 == i:
+            offset = i
+        dp[i] = 1 + dp[i - offset]
+    
+    return dp
 ```
