@@ -45,21 +45,11 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
-# code
-```
+```py
+def missingNumber(self, nums: List[int]) -> int:
+    res = len(nums)
 
-## Solution 2
-
-### Approach
-<!-- Describe your approach to solving the problem. -->
-
-### Complexity
-$$Time: O()$$
-
-$$Space: O()$$
-
-### Code
-```
-# code
+    for i in range(len(nums)):
+        res += i - nums[i]
+    return res
 ```
