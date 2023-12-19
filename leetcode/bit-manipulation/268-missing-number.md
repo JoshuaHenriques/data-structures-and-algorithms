@@ -37,12 +37,22 @@ All the numbers of nums are unique.
 ## Solution 1
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+XOR the input array with the range array and the last number left over in the range array is the missing number. Since when you XOR two of the same numbers you get 0 and when you XOR something with 0 you get the original number.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
+
+## Solution 2
+
+### Approach
+Get the sum of both arrays and subtract the range with the input array and the missing number will be the answer.
+
+### Complexity
+$$Time: O(n)$$
+
+$$Space: O(1)$$
 
 ### Code
 ```py
