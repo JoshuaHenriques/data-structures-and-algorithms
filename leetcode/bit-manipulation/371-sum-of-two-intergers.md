@@ -21,18 +21,18 @@ Output: 5
 -1000 <= a, b <= 1000
 ```
 
-## Optimized Solution
+## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+XOR each bit of the two numbers, then we AND each bit and shift to the left by 1 to handle the carries (in addition). Then we'll do the same thing with both of those results until there is no carries left.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(1)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
-```
+```py
 def getSum(self, a: int, b: int) -> int:
     def add(a, b):
         if not a or not b:
