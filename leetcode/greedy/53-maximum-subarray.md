@@ -32,32 +32,63 @@ Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 -104 <= nums[i] <= 104
 ```
 
-## Naive Solution
+## Solution 1 (TLE)
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Keep track of the max sum while looping through each subarray.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n^3)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def maxSubArray(self, nums: List[int]) -> int:
+    res = float("-inf")
+    
+    for i in range(len(nums)):
+        for j in range(i, len(nums)):
+            res = max(res, sum(nums[i:j + 1]))
+
+    return res
 ```
 
-## Optimized Solution
+## Solution 2 (TLE)
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Same as above but we keep track of the current sum.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n^2)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```
-# code
+def maxSubArray(self, nums: List[int]) -> int:
+    res = float("-inf")
+    
+    for i in range(len(nums)):
+        currSum = 0
+        for j in range(i, len(nums)):
+            currSum += nums[j]
+            res = max(res, currSum)
+
+    return res
+```
+
+## Solution 3 
+
+### Approach
+Same as above but we keep track of the current sum.
+
+### Complexity
+$$Time: O(n)$$
+
+$$Space: O(1)$$
+
+### Code
+```
+
 ```
