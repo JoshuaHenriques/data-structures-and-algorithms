@@ -43,7 +43,7 @@ $$Time: O(n^3)$$
 $$Space: O(1)$$
 
 ### Code
-```
+```py
 def maxSubArray(self, nums: List[int]) -> int:
     res = float("-inf")
     
@@ -65,7 +65,7 @@ $$Time: O(n^2)$$
 $$Space: O(1)$$
 
 ### Code
-```
+```py
 def maxSubArray(self, nums: List[int]) -> int:
     res = float("-inf")
     
@@ -81,7 +81,7 @@ def maxSubArray(self, nums: List[int]) -> int:
 ## Solution 3 
 
 ### Approach
-Same as above but we keep track of the current sum.
+Going through the array we start at the beginning and store that as our prefix. When we get to the next element, if our prefix was negative we adjust our starting pointer to that current element. If the prefix is positive we continue increasing the subarray window and update the max sum accordingly.
 
 ### Complexity
 $$Time: O(n)$$
@@ -89,6 +89,16 @@ $$Time: O(n)$$
 $$Space: O(1)$$
 
 ### Code
-```
+```py
+def maxSubArray(self, nums: List[int]) -> int:
+    maxSub = nums[0]
+    currSum = 0
 
+    for n in nums:
+        if currSum < 0:
+            currSum = 0
+        currSum += n
+        maxSub = max(maxSub, currSum)
+    
+    return maxSub
 ```
