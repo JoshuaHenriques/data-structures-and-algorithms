@@ -35,7 +35,7 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
+```py
 # code
 ```
 
@@ -50,6 +50,6 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-```
+```py
 # code
 ```
