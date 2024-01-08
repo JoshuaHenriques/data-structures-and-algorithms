@@ -47,9 +47,7 @@ def canJump(self, nums: List[int]) -> bool:
             return False
 
         for n in range(nums[i], -1, -1):
-            if n == 0 and i != len(nums) - 1:
-                continue
-            elif i + n < len(nums):
+            if n != 0 and i + n < len(nums):
                 if helper(i + n):
                     return True
 
@@ -86,9 +84,7 @@ def canJump(self, nums: List[int]) -> bool:
             return memo[i]
 
         for n in range(nums[i], -1, -1):
-            if n == 0 and i != len(nums) - 1:
-                continue
-            elif i + n < len(nums):
+            if n != 0 and i + n < len(nums):
                 if i + n in memo:
                     return memo[i + n]
                 memo[i + n] = helper(i + n)
