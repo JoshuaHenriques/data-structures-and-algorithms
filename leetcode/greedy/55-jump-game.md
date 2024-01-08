@@ -75,7 +75,7 @@ $$Space: O(n)$$
 def canJump(self, nums: List[int]) -> bool:
     memo = {}
 
-    def helper(i):
+    def dfs(i):
         if i == len(nums) - 1:
             return True
 
@@ -85,21 +85,16 @@ def canJump(self, nums: List[int]) -> bool:
         if i in memo:
             return memo[i]
 
-        for n in range(nums[i], -1, -1):
-            if n == 0 and i != len(nums) - 1:
-                continue
-            elif i + n < len(nums):
+        for n in range(nums[i], 0, -1):
+            if i + n < len(nums):
                 if i + n in memo:
                     return memo[i + n]
-                memo[i + n] = helper(i + n)
+                    
+                memo[i + n] = dfs(i + n)
                 if memo[i + n]:
                     return True
 
-    for n in range(nums[0], -1, -1):
-        if helper(n):
-            return True
-
-    return False
+    return dfs(0)
 ```
 
 ## DP Solution
