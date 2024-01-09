@@ -36,7 +36,7 @@ $$Space: O()$$
 
 ### Code
 ```py
-# code
+
 ```
 
 ## Optimized Solution
@@ -51,5 +51,5 @@ $$Space: O()$$
 
 ### Code
 ```py
-# code
+
 ```
