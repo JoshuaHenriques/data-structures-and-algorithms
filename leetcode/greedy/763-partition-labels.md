@@ -30,32 +30,67 @@ Output: [10]
 s consists of lowercase English letters.
 ```
 
-## Naive Solution
+## Solution 1
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Count the frequency of the characters. Create a set to keep track of the current characters. Iterate through the array, at each step we add that character to the set and subtract 1 from the freq at that character. If the freq for that character is 0 we can remove it from the tracked characters. If the current tracked characters is 0 that means we reached a point where we can make a valid partition and we add that length to the result by remembering the last parition length we made.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(26)$$
 
 ### Code
 ```py
+def partitionLabels(self, s: str) -> List[int]:
+    freq = defaultdict(int)
+    res = []
+    last = 0
+    for c in s:
+        freq[c] += 1
 
+    currFreq = freq
+    curr = set()
+    for i in range(len(s)):
+        curr.add(s[i])
+        currFreq[s[i]] -= 1
+        if currFreq[s[i]] == 0:
+            curr.remove(s[i])
+        
+        if len(curr) == 0:
+            res.append(i + 1 - last)
+            last = i + 1
+
+    return res
 ```
 
-## Optimized Solution
+## Solution 2
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Create a hashmap that has the character is the key and the last index occurence of that character is the value. During the iteration of the string we'll keep track of the current size of the partition and the minimum end of that partition. The end will be updated anytime we see a character with a lastIndex larger than the previous one. If we can get to that end index we can successfully update our partition size.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n)$$
 
-$$Space: O()$$
+$$Space: O(26)$$
 
 ### Code
 ```py
+def partitionLabels(self, s: str) -> List[int]:
+    lastIndex = {}
 
+    for i, c in enumerate(s):
+        lastIndex[c] = i
+
+    res = []
+    size, end = 0, 0
+    for i, c in enumerate(s):
+        size += 1
+        end = max(end, lastIndex[c])
+
+        if i == end:
+            res.append(size)
+            size = 0
+
+    return res
 ```
