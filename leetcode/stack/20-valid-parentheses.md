@@ -47,7 +47,7 @@ $$Time: O(n)$$
 $$Space: O(n)$$
 
 ### Code
-```
+```py
 def isValid(self, s: str) -> bool:
     stack = []
 
@@ -81,7 +81,7 @@ $$Time: O(n)$$
 $$Space: O(n)$$
 
 ### Code
-```
+```py
 def isValid(self, s: str) -> bool:
     stack = []
     hashmap = { ")": "(", "}": "{", "]": "["}
