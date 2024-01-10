@@ -37,32 +37,138 @@ Output: true
 s[i] is '(', ')' or '*'.
 ```
 
-## Naive Solution
+## Top Down Solution (TLE)
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(3^n)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```py
+def checkValidString(self, s: str) -> bool:
+    n = len(s)
 
+    def dfs(i, left):
+        if i == n:
+            if left == 0:
+                return True
+            else:
+                return False
+
+        if left < 0:
+            return False
+        elif s[i] == "(":
+            return dfs(i + 1, left + 1)
+        elif s[i] == ")":
+            return dfs(i + 1, left - 1)
+        else:
+            return dfs(i + 1, left - 1) or dfs(i + 1, left + 1) or dfs(i + 1, left)
+
+    return dfs(0, 0)
 ```
 
-## Optimized Solution
+## Memoization Solution
 
 ### Approach
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n^3)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```py
+def checkValidString(self, s: str) -> bool:
+    n = len(s)
 
+    memo = {}
+    def dfs(i, left):
+        if (i, left) in memo:
+            return memo[(i, left)]
+
+        if i == n:
+            if left == 0:
+                return True
+            else:
+                return False
+
+        if left < 0:
+            memo[(i, left)] = False
+        elif s[i] == "(":
+            memo[(i, left)] = dfs(i + 1, left + 1)
+        elif s[i] == ")":
+            memo[(i, left)] = dfs(i + 1, left - 1)
+        else:
+            memo[(i, left)] = dfs(i + 1, left - 1) or dfs(i + 1, left + 1) or dfs(i + 1, left)
+        
+        return memo[(i, left)]
+
+    return dfs(0, 0)
+```
+
+## DP Solution
+
+### Approach
+<!-- Describe your approach to solving the problem. -->
+
+### Complexity
+$$Time: O(n^2)$$
+
+$$Space: O(n^2)$$
+
+### Code
+```py
+def checkValidString(self, s: str) -> bool:
+    n = len(s)
+
+    dp = [[False] * (n + 1) for _ in range(n + 1)]
+    dp[n][0] = True
+
+    for i in range(n - 1, -1, -1):
+        for j in range(i, -1, -1):
+            if s[i] == "*":
+                dp[i][j] = (dp[i + 1][j - 1] if j else False) or dp[i + 1][j] or dp[i + 1][j + 1]
+            elif s[i] == "(":
+                dp[i][j] = dp[i + 1][j + 1]
+            else:
+                if j: dp[i][j] = dp[i + 1][j - 1]
+
+    return dp[0][0]
+```
+
+## Greedy Solution
+
+### Approach
+Refer to Neetcode video
+
+### Complexity
+$$Time: O(n)$$
+
+$$Space: O(1)$$
+
+### Code
+```py
+def checkValidString(self, s: str) -> bool:
+    leftMin, leftMax = 0, 0
+
+    for c in s:
+        if c == "(":
+            leftMin, leftMax = leftMin + 1, leftMax + 1
+        elif c == ")":
+            leftMin, leftMax = leftMin - 1, leftMax -1
+        else:
+            leftMin, leftMax = leftMin - 1, leftMax + 1
+
+        if leftMax < 0:
+            return False
+        
+        if leftMin < 0:
+            leftMin = 0
+
+    return leftMin == 0
 ```
