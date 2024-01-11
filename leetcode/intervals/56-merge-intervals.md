@@ -25,17 +25,70 @@ intervals[i].length == 2
 0 <= starti <= endi <= 104
 ```
 
-## Solution
+## Solution 1 (Messy)
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Interate through the intervals, check if the end of the new interval is less than the start of the current interval, if so we can append to result, join both lists and return. If the start of the new interval is greater than the end of the current interval we append the current interval and continue. If there is overlapping then we merge the two intervals by getting the min of the starts and the max of the ends.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(nlogn)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```py
+def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    res = []
 
+    for i in range(len(intervals) - 1):
+        if intervals[i][1] < intervals[i + 1][0]:
+            res.append(intervals[i])
+            if i + 1 == len(intervals) - 1:
+                res.append(intervals[i + 1])
+        elif intervals[i][0] > intervals[i + 1][1]:
+            res.append(intervals[i])
+            if i + 1 == len(intervals) - 1:
+                res.append(intervals[i + 1])
+        else:
+            newInterval = [min(intervals[i][0], intervals[i + 1][0]), max(intervals[i][1], intervals[i + 1][1])]
+            if i + 1 == len(intervals) - 1:
+                res.append(newInterval)
+            else:
+                intervals[i + 1] = newInterval
+
+    return res if len(intervals) != 1 else intervals
+```
+
+## Solution 2 
+
+### Approach
+Same as above just cleaner code.
+
+### Complexity
+$$Time: O(nlogn)$$
+
+$$Space: O(n)$$
+
+### Code
+```py
+def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    res = []
+
+    for i in range(len(intervals) - 1):
+        if intervals[i][1] < intervals[i + 1][0]:
+            res.append(intervals[i])
+            if i + 1 == len(intervals) - 1:
+                res.append(intervals[i + 1])
+        elif intervals[i][0] > intervals[i + 1][1]:
+            res.append(intervals[i])
+            if i + 1 == len(intervals) - 1:
+                res.append(intervals[i + 1])
+        else:
+            newInterval = [min(intervals[i][0], intervals[i + 1][0]), max(intervals[i][1], intervals[i + 1][1])]
+            if i + 1 == len(intervals) - 1:
+                res.append(newInterval)
+            else:
+                intervals[i + 1] = newInterval
+
+    return res if len(intervals) != 1 else intervals
 ```
