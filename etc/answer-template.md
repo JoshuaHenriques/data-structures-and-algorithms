@@ -20,9 +20,7 @@
 
 *Constraints:*
 
-```
-
-```
+*
 
 ## Naive Solution
 

@@ -31,12 +31,10 @@ twitter.getNewsFeed(1);  // User 1's news feed should return a list with 1 tweet
 
 *Constraints:*
 
-```
-1 <= userId, followerId, followeeId <= 500
-0 <= tweetId <= 104
-All the tweets have unique IDs.
-At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
-```
+* 1 <= userId, followerId, followeeId <= 500
+* 0 <= tweetId <= 104
+* All the tweets have unique IDs.
+* At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfollow.
 
 ## Optimized Solution
 

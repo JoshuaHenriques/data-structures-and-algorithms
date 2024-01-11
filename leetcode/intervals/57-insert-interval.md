@@ -22,14 +22,12 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
 *Constraints:*
 
-```
-0 <= intervals.length <= 104
-intervals[i].length == 2
-0 <= starti <= endi <= 105
-intervals is sorted by starti in ascending order.
-newInterval.length == 2
-0 <= start <= end <= 105
-```
+* 0 <= intervals.length <= 104
+* intervals[i].length == 2
+* 0 <= starti <= endi <= 105
+* intervals is sorted by starti in ascending order.
+* newInterval.length == 2
+* 0 <= start <= end <= 105
 
 ## Solution
 
