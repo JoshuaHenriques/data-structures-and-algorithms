@@ -37,17 +37,67 @@ Explanation: The queries are processed as follows:
 * 1 <= lefti <= righti <= 107
 * 1 <= queries[j] <= 107
 
-## Naive Solution
+## Naive Solution (TLE)
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Gather the sizes of the intervals. Iterate through the queries
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n*q)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```py
+def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+    ranges = [-1 for _ in intervals]
+    res = []
 
+    for i in range(len(intervals)):
+        ranges[i] = intervals[i][1] - intervals[i][0]
+
+    for i in range(len(queries)):
+        lowestR = (0, float("inf"))
+        for j in range(len(intervals)):
+            if queries[i] in range(intervals[j][0], intervals[j][1] + 1):
+                if ranges[j] < lowestR[1]:
+                    lowestR = (j, ranges[j])
+
+        if lowestR == (0, float("inf")):
+            res.append(-1)
+        else:
+            res.append(intervals[lowestR[0]][1] - intervals[lowestR[0]][0] + 1) 
+
+    return res
+```
+
+## Solution
+
+### Approach
+
+
+### Complexity
+$$Time: O(nlogn + qlogq)$$
+
+$$Space: O(n)$$
+
+### Code
+```py
+def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
+    intervals.sort()
+
+    minHeap = []
+    res, i = {}, 0
+    for q in sorted(queries):
+        while i < len(intervals) and intervals[i][0] <= q:
+            l, r = intervals[i]
+            heapq.heappush(minHeap, (r - l + 1, r))
+            i += 1
+
+        while minHeap and minHeap[0][1] < q:
+            heapq.heappop(minHeap)
+        
+        res[q] = minHeap[0][0] if minHeap else -1
+
+    return [res[q] for q in queries]
 ```
