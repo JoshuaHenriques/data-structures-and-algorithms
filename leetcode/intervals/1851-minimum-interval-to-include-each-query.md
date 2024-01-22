@@ -40,7 +40,7 @@ Explanation: The queries are processed as follows:
 ## Naive Solution (TLE)
 
 ### Approach
-Gather the sizes of the intervals. Iterate through the queries
+Gather the sizes of the intervals. Iterate through the queries, we use a variable as a tuple to keep track of the index and the minimum range. So if that query is in range of the interval and is less than the current we can update the variable. If it never updated we append -1 to the result if so we append the answer.
 
 ### Complexity
 $$Time: O(n*q)$$
@@ -74,7 +74,7 @@ def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[in
 ## Solution
 
 ### Approach
-
+Refer to neetcode video. Similar to above but sorted both inputs and used a minheap for tracking.
 
 ### Complexity
 $$Time: O(nlogn + qlogq)$$
