@@ -23,32 +23,43 @@ Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 * 1 <= n <= 20
 * -1000 <= matrix[i][j] <= 1000
 
-## Naive Solution
+## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Use four pointers: left, right, bottom, top. While the l is less than the right pointer we iterate n - 1 through the row. The top and bottom pointer gets updated to be the same as the right and left pointer. To avoid having more than one temporary variables to hold the values we can do the swap in reverse (counter-clockwise) so we only need to keep the first value in a temporary value. Our i index from the loop will be used as an offset for the next set of elements we need to move as the loop goes on.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(n^2)$$
 
-$$Space: O()$$
+$$Space: O(1)$$
 
 ### Code
 ```py
+def rotate(self, matrix: List[List[int]]) -> None:
+    """
+    Do not return anything, modify matrix in-place instead.
+    """
+    l, r = 0, len(matrix) - 1
 
-```
+    while l < r:
+        for i in range(r - l):
+            top, bottom = l, r
 
-## Optimized Solution
+            # save the topLeft
+            topLeft = matrix[top][l + i]
 
-### Approach
-<!-- Describe your approach to solving the problem. -->
+            # move bottom left into top left
+            matrix[top][l + i] = matrix[bottom - i][l]
 
-### Complexity
-$$Time: O()$$
+            # move bottom right into bottom left
+            matrix[bottom - i][l] = matrix[bottom][r - i]
 
-$$Space: O()$$
+            # move top right into bottom right
+            matrix[bottom][r - i] = matrix[top + i][r]
 
-### Code
-```py
+            # move top left into top right
+            matrix[top + i][r] = topLeft
 
+        r -= 1
+        l += 1
 ```
