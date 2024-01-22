@@ -36,9 +36,9 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 Refer to Neetcode video.
 
 ### Complexity
-$$Time: O()$$
+$$Time: O(logn)$$
 
-$$Space: O()$$
+$$Space: O(n)$$
 
 ### Code
 ```py
