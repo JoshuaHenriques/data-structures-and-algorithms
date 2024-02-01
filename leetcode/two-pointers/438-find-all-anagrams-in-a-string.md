@@ -69,7 +69,7 @@ def isAnagram(self, s: str, p: str) -> bool:
 ## Solution
 
 ### Approach
-Two maps with counters, one for p and one for s. **Preprocess?** Each time we shift the window we adjust the counters and see if both maps equal each other, if so we have an anagram so we append the starting index to the res.
+Two maps with counters, one for p and one for s. Preprocess the sMap by adding the counters to it before iterating through the s string. Each time we shift the window we adjust the counters and see if both maps equal each other, if so we have an anagram so we append the starting index to the res.
 
 ### Complexity
 $$Time: O(s)$$
