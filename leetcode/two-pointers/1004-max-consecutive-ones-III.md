@@ -73,7 +73,6 @@ $$Space: O(1)$$
 ```py
 def longestOnes(self, nums: List[int], k: int) -> int:
     i, j = 0, 0
-    longest = 0
 
     while j < len(nums):
         if nums[j] == 0:
