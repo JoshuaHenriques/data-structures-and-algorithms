@@ -12,6 +12,8 @@
 * 355 Design Twitter
 * 169 Majority Element I
 * 1043 Partition Array for Maximum Sum
+* 279 Perfect Square
+* 368 Largest Divisible Subset
 
 ## Revisit
 * Union Find
