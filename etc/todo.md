@@ -2,6 +2,9 @@
 
 ## Write Solution
 * 229 Majority Element II
+* 279 Perfect Square
+* 368 Largest Divisible Subset
+* 647 Palindromic Substrings
 
 ## Write Approach
 * All DP problems
@@ -12,8 +15,8 @@
 * 355 Design Twitter
 * 169 Majority Element I
 * 1043 Partition Array for Maximum Sum
-* 279 Perfect Square
-* 368 Largest Divisible Subset
+* 2352 Equal Row and Column Pairs
+* 560 Subarray Sum Equals K
 
 ## Revisit
 * Union Find
