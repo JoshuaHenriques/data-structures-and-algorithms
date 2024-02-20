@@ -38,7 +38,7 @@ Output: "abcabccdcdcdef"
 ## Solution
 
 ### Approach
-<!-- Describe your approach to solving the problem. -->
+Append each character to the stack until we reach a closing bracket. If it is a closing bracket we create a substring by appending each letter that was in those brakets until we reach the opening bracket. Pop that opening bracket and pop what the k value would be in the same way but until we reach a non-digit. Append the (k * substring) into the stack once we're finished.
 
 ### Complexity
 $$Time: O(n)$$
