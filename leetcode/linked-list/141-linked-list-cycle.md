@@ -48,7 +48,7 @@ $$Time: O(n)$$
 $$Space: O(n)$$
 
 ### Code
-```
+```py
 def hasCycle(self, head: Optional[ListNode]) -> bool:
     hashset = set()
 
@@ -73,6 +73,6 @@ $$Time: O(n)$$
 $$Space: O(1)$$
 
 ### Code
-```
+```py
 # code
 ```
