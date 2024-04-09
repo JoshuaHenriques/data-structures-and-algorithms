@@ -60,7 +60,7 @@ Same as above but using a queue instead of recursion
 ### Complexity
 $$Time: O(n)$$
 
-$$Space: O(logn)$$
+$$Space: O(n)$$
 
 ### Code
 ```py
