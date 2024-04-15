@@ -48,7 +48,7 @@ With a helper function with the parameters: root, current direction, and current
 ### Complexity
 $$Time: O(n)$$
 
-$$Space: O(logn)$$
+$$Space: O(n)$$
 
 ### Code
 ```py

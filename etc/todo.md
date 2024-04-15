@@ -24,6 +24,8 @@
 
 ## Learn
 * Merge Sort
+* Difference between logn vs n space complexity for tree problems
+* Stack implementations for recursion
 
 ## Notes
 * add py to all code blocks
