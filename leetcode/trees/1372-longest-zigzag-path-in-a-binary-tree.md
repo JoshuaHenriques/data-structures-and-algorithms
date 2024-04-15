@@ -43,7 +43,7 @@ Output: 0
 ## Solution
 
 ### Approach
-With a helper function with the parameters: root, current direction, and current count. Set the total count the max between itself and the current count. If the current direction is right we recursivly call the helper with the left node while incrementing the current count. We also call the helper function on the right node and reset the count. We do the opposite for the other direction. 
+With a helper function with the parameters: root, current direction, and current count. Set the total count the max between itself and the current count. If the current direction is right we recursively call the helper with the left node while incrementing the current count. We also call the helper function on the right node and reset the count. We do the opposite for the other direction. 
 
 ### Complexity
 $$Time: O(n)$$
