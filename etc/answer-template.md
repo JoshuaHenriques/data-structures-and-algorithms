@@ -25,14 +25,17 @@
 ## Naive Solution
 
 ### Approach
+
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
+
 $$Time: O()$$
 
 $$Space: O()$$
 
 ### Code
+
 ```py
 
 ```
@@ -40,14 +43,17 @@ $$Space: O()$$
 ## Optimized Solution
 
 ### Approach
+
 <!-- Describe your approach to solving the problem. -->
 
 ### Complexity
+
 $$Time: O()$$
 
 $$Space: O()$$
 
 ### Code
+
 ```py
 
 ```
