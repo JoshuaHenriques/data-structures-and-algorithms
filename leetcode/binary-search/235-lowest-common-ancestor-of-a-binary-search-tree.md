@@ -39,15 +39,17 @@ p and q will exist in the BST.
 ## Solution
 
 ### Approach
+
 Since this tree is a BST we check if both p's and q's values are greater or less than the roots value so we can recursively call the function on the left or right subtree until we get a senario where p's value is the left child and q's value is the right child then we know the root is the LCA. We can also return the root as the LCA if we reach a root node that has either p's or q's value since an LCA can be a descendant of itself.
 
 ### Complexity
+
 $$Time: O(logn)$$
 
 $$Space: O(n)$$
 
 ### Code
-```
+```py
 def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
     if p.val < root.val and q.val < root.val:
         return self.lowestCommonAncestor(root.left, p, q)
