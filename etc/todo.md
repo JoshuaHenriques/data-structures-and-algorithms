@@ -25,11 +25,8 @@
 ## Learn
 * Merge Sort
 * Difference between logn vs n space complexity for tree problems
-* Stack implementations for recursion
+* Stack/Queue implementations for recursion
 
 ## Notes
 * add py to all code blocks
 * Recalculate time and space complexity when reviewing (Trees)
-    * Write explanations for time and space complexity?
-* "Most Common Concepts for Coding Interviews" to help group algorithms.md
-* "Top 8 Data Structures for Coding Interviews" to help fill data-structures.md
