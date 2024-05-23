@@ -51,7 +51,8 @@ def searchInsert(self, nums: List[int], target: int) -> int:
     l, r = 0, len(nums) - 1
 
     while l <= r:
-        mid = (l + r) // 2
+        # mid = (l + r) // 2
+        mid = l + (r - l) // 2 # prevent overflow
 
         if nums[mid] == target:
             return mid
@@ -59,6 +60,6 @@ def searchInsert(self, nums: List[int], target: int) -> int:
             l = mid + 1
         else:
             r = mid - 1
-    print(l, r)
+
     return l
 ```
