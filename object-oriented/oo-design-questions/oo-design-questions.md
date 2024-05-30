@@ -1,4 +1,4 @@
-# Common Design Questions
+# Object Oriented Design Questions
 
 * Design a least recently used cache 
 * Design a call center 	
