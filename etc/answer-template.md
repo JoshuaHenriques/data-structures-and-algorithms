@@ -2,19 +2,19 @@
 
 *Example 1:*
 
-```
+```txt
 
 ```
 
 *Example 2:*
 
-```
+```txt
 
 ```
 
 *Example 3:*
 
-```
+```txt
 
 ```
 
@@ -53,7 +53,3 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
-
-```py
-
-```
