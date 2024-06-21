@@ -1,5 +1,9 @@
 # Algorithms/Patterns
 
+## Sorting
+
+
+
 ## Two Pointers
 
 * This technique is commonly applied on sorted arrays or linked lists to find pairs or reverse elements. It is an ideal strategy when managing elements with pair relationships.
@@ -226,20 +230,14 @@ fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 * First we need a data structure to hold the sub-problem solutions, then we iterate from smaller sub-problems to large ones and use the recurrence relation to compute the solution to each of the sub-problems
 
 
-### Shortest Path (eg: Unique Paths I/II)
+### Common Patterns
 
-
-### Fibonacci Sequence (eg: House Thief, Jump Game)
-
-
-### Longest Common Substring/Subsequeunce
-
-
-### 0/1 Knapsack
-
-* Useful in solving problems related to permutations and combinations.
-
-### Unbounded Knapsack
+* Shortest Path (eg: Unique Paths I/II)
+* Fibonacci Sequence (eg: House Thief, Jump Game)
+* Longest Common Substring/Subsequeunce
+* 0/1 Knapsack
+  * Useful in solving problems related to permutations and combinations.
+* Unbounded Knapsack
 
 
 ## Backtracking
