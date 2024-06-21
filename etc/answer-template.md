@@ -20,7 +20,9 @@
 
 *Constraints:*
 
-*
+```txt
+
+```
 
 ## Naive Solution
 
@@ -53,3 +55,7 @@ $$Time: O()$$
 $$Space: O()$$
 
 ### Code
+
+```py
+
+```
