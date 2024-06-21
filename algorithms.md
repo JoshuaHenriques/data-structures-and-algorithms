@@ -2,7 +2,11 @@
 
 ## Sorting
 
-
+* insertion sorted
+* merge sort
+* quick sort
+* bucket sort
+* bubble sort
 
 ## Two Pointers
 
@@ -238,7 +242,6 @@ fib(n) = fib(n-1) + fib(n-2) where fib(0) = 0 and fib(1) = 1
 * 0/1 Knapsack
   * Useful in solving problems related to permutations and combinations.
 * Unbounded Knapsack
-
 
 ## Backtracking
 
