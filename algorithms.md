@@ -2,11 +2,11 @@
 
 ## Sorting
 
-* insertion sorted
-* merge sort
-* quick sort
-* bucket sort
-* bubble sort
+* Insertion sort
+* Merge sort
+* Quick sort
+* Bucket sort
+* Bubble sort
 
 ## Two Pointers
 
